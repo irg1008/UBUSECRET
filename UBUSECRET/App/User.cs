@@ -1,92 +1,120 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Security.Cryptography;
 
-namespace Practica_01
+namespace App
 {
-    enum Role
+    public enum State
     {
-        ADMIN,
-        USER
+        PREFETCHED,
+        REQUESTED,
+        AUTHORIZED,
+        ACTIVE,
+        BANNED
     }
 
     public class User
     {
-        private String id;
+        private readonly Guid id;
         private String name;
         private String surname;
         private String email;
-        private String password; // Hashed String
-        private List<String> attachedSecrets;
-        private bool verified; // Cambiamos esto por "estado".
-        private List<Role> roles;
+        private String password;
+        private String lastIP;
+        private State state;
+        private DateTime lastSeen;
+        private bool isAdmin;
 
         /* CONSTRUCTOR */
-        public User(String name, String surname, String email, String password)
+        public User(String name, String surname, String email, String initPassword)
         {
-            // TODO - generar id
+            this.id = Guid.NewGuid();
             Name = name;
             Surname = surname;
             Email = email;
-            attachedSecrets = new List<string>();
-            // TODO - cifrado de password
+            Password = this.Hash(initPassword);
+            State = State.PREFETCHED;
+            IsAdmin = false;
+            LastIP = null;
+            LastSeen = DateTime.Now;
         }
 
         /* GETTERS AND SETTERS */
-        public string Id { get => id; set => id = value; }
+        public Guid Id => id;
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
-        public List<string> AttachedSecrets { get => attachedSecrets; set => attachedSecrets = value; }
-        public bool Verified { get => verified; set => verified = value; }
-        internal List<Role> Roles { get => roles; set => roles = value; }
+        public string LastIP { get => lastIP; set => lastIP = value; }
+        public DateTime LastSeen { get => lastSeen; set => lastSeen = value; }
+        public bool IsAdmin { get => isAdmin; set => isAdmin = value; }
+        public State State { get => state; set => state = value; }
+
 
         /* FUNCIONES */
 
-        // TODO
-        public bool checkPasword(String password)
+        public bool Request()
         {
-            return password == this.password;
+            if (State != State.PREFETCHED) return false;
+            State = State.REQUESTED;
+            return true;
         }
 
-        // TODO - revisar
-        public bool addSecret(Secret secret)
+        public bool Authorize()
         {
-            attachedSecrets.Add(secret.Id);
-            return false;
+            if (State != State.REQUESTED) return false;
+            State = State.AUTHORIZED;
+            return true;
         }
 
-        // TODO - revisar
-        public bool updateSecret(Secret secret)
+        public bool Activate()
         {
-            if (attachedSecrets.Remove(secret.Id))
-            {
-                attachedSecrets.Add(secret.Id);
-                return true;
-            }
-            else
-                return false;
+            if (State != State.AUTHORIZED && State != State.BANNED) return false;
+            State = State.ACTIVE;
+            return true;
         }
 
-        // TODO
-        public bool deleteSecret(String secretId)
+        public bool Ban()
         {
-            return attachedSecrets.Remove(secret.Id);
+            if (State != State.ACTIVE) return false;
+            State = State.BANNED;
+            return true;
         }
 
-        // TODO
-        public bool refreshArrachedSecrets()
+        public bool CheckPasword(String password)
         {
-            return false;
+            return this.Hash(password) == Password;
         }
 
-        // TODO
-        public bool detachFromSecret(String secretId)
+        public bool ChangePassword(String oldPass, String newPass)
         {
-            return false;
+            bool isOldCorrect = this.CheckPasword(oldPass);
+            if (!isOldCorrect) return false;
+            
+            Password = this.Hash(newPass);
+            return true;
+
         }
 
+        private string Hash(string password)
+        {
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+            SHA256 mySHA256 = SHA256.Create();
+            bytes = mySHA256.ComputeHash(bytes);
+            return (System.Text.Encoding.ASCII.GetString(bytes));
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is User user && (
+                   Id.Equals(user.Id) ||
+                   Email == user.Email);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Email);
+        }
     }
 
-    
+
 }

@@ -1,54 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace App
 {
     public class Secret
     {
-        private String id;
-        private String sender;
-        private List<String> receiversId;
+        private readonly Guid id;
+        private String publicKey;
+        private String privateKey;
         private String message;
-        private String key;
+        private User owner;
+        private List<User> consumers;
 
         /* CONSTRUCTORES */
-        public Secret(string sender, List<string> receiversId, string message)
+        public Secret(String publicKey, String privateKey, string message, User owner, List<User> consumers)
         {
-            // TODO - generar id
-            this.sender = sender;
-            this.receiversId = receiversId;
-            this.message = message;
-            // TODO - generar clave
+            this.id = new Guid();
+            PrivateKey = privateKey;
+            PublicKey = publicKey;
+            Message = message;
+            Owner = owner;
+            Consumers = consumers;
         }
 
         /* GETTERS AND SETTERS */
-        public string Id { get => id; set => id = value; }
-        public string Sender { get => sender; set => sender = value; }
-        public List<string> ReceiversId { get => receiversId; set => receiversId = value; }
+        public Guid Id => id;
+        public string PrivateKey { get => privateKey; set => privateKey = value; }
+        public string PublicKey { get => publicKey; set => publicKey = value; }
         public string Message { get => message; set => message = value; }
-        public string Key { get => key; set => key = value; }
+        public User Owner { get => owner; set => owner = value; }
+        public List<User> Consumers { get => consumers; set => consumers = value; }
+
 
         /* FUNCIONES */
 
-        // TODO - Yo lo haria void
-        public bool attachUser(String userId)
+        public void Encrypt(String message)
         {
-            receiversId.Add(userId);
-            return true;
+            return;
         }
 
-        // TODO
-        public bool dettachUser(String userId)
+        public void Decrypt(String message)
         {
-            return receiversId.Remove(userId);
+            return;
         }
-
-        // TODO
-        public void createLink(List<User> allowedUsers)
-        {
-
-        }
-
     }
 }
