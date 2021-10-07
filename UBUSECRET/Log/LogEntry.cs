@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Main;
 
-namespace App
+namespace Log
 {
     public enum Entry
     {

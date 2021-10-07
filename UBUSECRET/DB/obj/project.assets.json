@@ -2,21 +2,10 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
-      "Log/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Log.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Log.dll": {}
-        }
-      },
       "Main/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Log": "1.0.0",
           "Utils": "1.0.0"
         },
         "compile": {
@@ -39,15 +28,10 @@
     }
   },
   "libraries": {
-    "Log/1.0.0": {
-      "type": "project",
-      "path": "../Log/Log.csproj",
-      "msbuildProject": "../Log/Log.csproj"
-    },
     "Main/1.0.0": {
       "type": "project",
-      "path": "../App/Main.csproj",
-      "msbuildProject": "../App/Main.csproj"
+      "path": "../Main/Main.csproj",
+      "msbuildProject": "../Main/Main.csproj"
     },
     "Utils/1.0.0": {
       "type": "project",
@@ -61,23 +45,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Iván\\.nuget\\packages\\": {},
+    "C:\\Users\\Ivan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\P03(29-09)\\Resultado\\Proyecto\\UBUSECRET\\DB\\DB.csproj",
+      "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
       "projectName": "DB",
-      "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\P03(29-09)\\Resultado\\Proyecto\\UBUSECRET\\DB\\DB.csproj",
-      "packagesPath": "C:\\Users\\Iván\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\P03(29-09)\\Resultado\\Proyecto\\UBUSECRET\\DB\\obj\\",
+      "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
+      "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Iván\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -85,15 +69,14 @@
         "netstandard2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
       },
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\P03(29-09)\\Resultado\\Proyecto\\UBUSECRET\\App\\Main.csproj": {
-              "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\P03(29-09)\\Resultado\\Proyecto\\UBUSECRET\\App\\Main.csproj"
+            "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj": {
+              "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj"
             }
           }
         }

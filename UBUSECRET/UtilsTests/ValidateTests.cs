@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using App;
+using Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace App.Tests
+namespace Utils.Tests
 {
     [TestClass()]
     public class ValidateTests

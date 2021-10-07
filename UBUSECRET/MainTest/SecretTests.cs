@@ -1,9 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using App;
+using Main;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-namespace App.Tests
+
+namespace Main.Tests
 {
     [TestClass()]
     public class SecretTests
@@ -67,15 +68,15 @@ namespace App.Tests
             User consumer = new User("Consumer", "of Secret", "consumer@user.com", "P@ssword");
 
             // Add consumer.
-            Assert.IsTrue(s.Consumers.Count == 0);
+            Assert.IsTrue(s.UsersWithAccess() == 0);
             bool consumerAdded = s.AddConsumer(consumer);
             Assert.IsTrue(consumerAdded);
-            Assert.IsTrue(s.Consumers.Count == 1);
+            Assert.IsTrue(s.UsersWithAccess() == 1);
 
             // Remove consumer.
             bool consumerRemoved = s.RemoveConsumer(consumer);
             Assert.IsTrue(consumerRemoved);
-            Assert.IsTrue(s.Consumers.Count == 0);
+            Assert.IsTrue(s.UsersWithAccess() == 0);
 
             // Try to remove secret owner.
             User owner = s.Owner;
@@ -109,12 +110,29 @@ namespace App.Tests
         {
             Secret s = s_a;
 
-            int correctHashCode = HashCode.Combine(s.Id);
+            int correctHashCode = HashCode.Combine(s.Title);
             int wrongHashCode = HashCode.Combine(s.Message);
             int secretrHashCode = s.GetHashCode();
 
             Assert.AreEqual(correctHashCode, secretrHashCode);
             Assert.AreNotEqual(correctHashCode, wrongHashCode);
+        }
+
+        [TestMethod()]
+        public void CompareToTest()
+        {
+            Secret first = s_a;
+            Secret second = s_b;
+
+            first.Title = "a";
+            second.Title = "b";
+
+            bool aIsFirst = first.CompareTo(second) < 0;
+            Assert.IsTrue(aIsFirst);
+
+            second.Title = "a";
+            bool aSameB = first.CompareTo(second) == 0;
+            Assert.IsTrue(aSameB);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 
 
-namespace App
+namespace Main
 {
     public enum State
     {
@@ -13,7 +13,7 @@ namespace App
         BANNED
     }
 
-    public class User
+    public class User : IComparable<User>
     {
         private readonly Guid id;
         private String name;
@@ -80,6 +80,11 @@ namespace App
             return true;
         }
 
+        public void MakeAdmin()
+        {
+            IsAdmin = true;
+        }
+
         public bool CheckPasword(String password)
         {
             return this.Hash(password) == Password;
@@ -111,7 +116,12 @@ namespace App
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Email);
+            return HashCode.Combine(Email, Name);
+        }
+
+        public int CompareTo(User other)
+        {
+            return Id.CompareTo(other.Id);
         }
     }
 

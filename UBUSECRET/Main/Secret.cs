@@ -1,10 +1,10 @@
-﻿using App.Utils;
+﻿using Utils;
 using System;
 using System.Collections.Generic;
 
-namespace App
+namespace Main
 {
-    public class Secret
+    public class Secret : IComparable<Secret>
     {
         private readonly RSAEncryption RSA = new RSAEncryption();
 
@@ -37,9 +37,19 @@ namespace App
             return owner.Equals(user);
         }
 
+        public int UsersWithAccess()
+        {
+            return Consumers.Count;
+        }
+
+        private bool HasAccess(User user)
+        {
+            return Consumers.Contains(user);
+        }
+
         public bool AddConsumer(User user)
         {
-            bool containsUser = Consumers.Contains(user);
+            bool containsUser = HasAccess(user);
             bool isOwner = IsOwner(user);
 
             if (containsUser || isOwner) return false;
@@ -50,7 +60,7 @@ namespace App
 
         public bool RemoveConsumer(User user)
         {
-            bool containsUser = Consumers.Contains(user);
+            bool containsUser = HasAccess(user);
             bool isOwner = IsOwner(user);
 
             if (!containsUser || isOwner) return false;
@@ -62,7 +72,6 @@ namespace App
             return RSA.DecryptText(Message);
         }
 
-        /* FUNCIONES */
         public override bool Equals(object obj)
         {
             return obj is Secret secret &&
@@ -71,7 +80,12 @@ namespace App
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id);
+            return HashCode.Combine(Title.GetHashCode());
+        }
+
+        public int CompareTo(Secret other)
+        {
+            return Title.CompareTo(other.Title);
         }
     }
 }

@@ -5,69 +5,177 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
-using App;
+using Main;
 
 namespace DataAccess
 {
     public class DB : IDB
     {
-        private SortedList<Guid, User> tblUsers = new SortedList<Guid, User>();
+        private int currentUser = 0;
+        private int currentSecret = 0;
+        private readonly SortedList<Guid, User> tblUsers = new SortedList<Guid, User>();
+        private readonly SortedList<Guid, Secret> tblSecrets = new SortedList<Guid, Secret>();
 
         public DB()
         {
             // Inicilización de los elementos de la base de datos
-            User uAdmin = new User("Administrador", "Administración", "admin@ubu.es", "Proyectos")
-            {
-                Password = "P@ssword",
-                IsAdmin = true
-            };
-
-            tblUsers.Add(uAdmin.Id, uAdmin);
+            User uAdmin = new User("Administrador", "Administración", "admin@ubu.es", "Password");
+            uAdmin.MakeAdmin();
+            uAdmin.Activate();
+            uAdmin.ChangePassword("Password", "P@ssword");
+            InsertUser(uAdmin);
         }
 
-        User IDB.ReadUser(Guid id)
+        public bool ContainsSecret(Secret secret)
         {
-            throw new NotImplementedException();
+            return ContainsSecret(secret.Id);
         }
 
-        public User DeleteUser(string id)
+        public bool ContainsSecret(Guid id)
         {
-            throw new NotImplementedException();
+            return tblSecrets.ContainsKey(id);
         }
 
-        public bool InsertUser(User usuario)
+        public bool ContainsUser(User user)
         {
-            throw new NotImplementedException();
+            return ContainsUser(user.Id);
         }
 
-        User IDB.DeleteUser(Guid id)
+        public bool ContainsUser(Guid id)
         {
-            throw new NotImplementedException();
+            return tblUsers.ContainsKey(id);
         }
 
-        Secret IDB.ReadSecret(Guid id)
+        public bool ContainsUser(string email)
         {
-            throw new NotImplementedException();
+            User u = ReadUser(email);
+            return ContainsUser(u);
         }
 
-        Secret IDB.DeleteSecret(Guid id)
+        public bool DeleteSecret(Guid id)
         {
-            throw new NotImplementedException();
+            return tblSecrets.Remove(id);
         }
 
-        bool IDB.insertSecret(Secret secret)
+        public bool DeleteSecret(Secret secret)
         {
-            throw new NotImplementedException();
+            return DeleteSecret(secret.Id);
         }
 
-        bool IDB.verifyUser(Guid userId)
+        public bool DeleteUser(Guid id)
         {
-            throw new NotImplementedException();
+            return tblUsers.Remove(id);
         }
 
-        bool IDB.makeUserAdmin(Guid userId)
+        public bool DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            return DeleteUser(user.Id);
+        }
+
+        public bool DeleteUser(string email)
+        {
+            User u = ReadUser(email);
+            return DeleteUser(u);
+        }
+
+        public bool InsertSecret(Secret secret)
+        {
+            tblSecrets.Add(secret.Id, secret);
+            return true;
+        }
+
+        public bool InsertUser(User user)
+        {
+            tblUsers.Add(user.Id, user);
+            return true;
+        }
+
+        private bool IndexOutsideSecrets(int index)
+        {
+            return index < 0 || index >= SecretCount();
+        }
+
+        private bool IndexOutsideUsers(int index)
+        {
+            return index < 0 || index >= UserCount();
+        }
+
+        public Secret NextSecret()
+        {
+            if (IndexOutsideSecrets(currentSecret + 1)) return null;
+            currentSecret++;
+            return tblSecrets.ElementAt(currentSecret).Value;
+        }
+
+        public User NextUser()
+        {
+            if (IndexOutsideUsers(currentUser + 1)) return null;
+            currentUser++;
+            return tblUsers.ElementAt(currentUser).Value;
+        }
+
+        public Secret PreviousSecret()
+        {
+            if (IndexOutsideSecrets(currentSecret - 1)) return null;
+            currentSecret--;
+            return tblSecrets.ElementAt(currentSecret).Value;
+        }
+
+        public User PreviousUser()
+        {
+            if (IndexOutsideUsers(currentUser - 1)) return null;
+            currentUser--;
+            return tblUsers.ElementAt(currentUser).Value;
+        }
+
+        public Secret ReadSecret(Guid id)
+        {
+            return tblSecrets[id];
+        }
+
+        public Secret ReadSecret(Secret secret)
+        {
+            return ReadSecret(secret.Id);
+        }
+
+        public User ReadUser(Guid id)
+        {
+            return tblUsers[id];
+        }
+
+        public User ReadUser(string email)
+        {
+            User u = tblUsers.Where(user => user.Value.Email == email).First().Value;
+            return ReadUser(u);
+        }
+
+        public User ReadUser(User user)
+        {
+            return ReadUser(user.Id);
+        }
+
+        public int SecretCount()
+        {
+            return tblSecrets.Count;
+        }
+
+        public bool UpdateSecret(Secret secret)
+        {
+            bool containsSecret = ContainsSecret(secret);
+            if (containsSecret) tblSecrets[secret.Id] = secret;
+            return containsSecret;
+        }
+
+        public bool UpdateUser(User user)
+        {
+            bool containsUser = ContainsUser(user);
+            if (containsUser) tblUsers[user.Id] = user;
+            return containsUser;
+        }
+
+        public int UserCount()
+        {
+            return tblUsers.Count;
         }
     }
 }

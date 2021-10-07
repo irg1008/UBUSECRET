@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using App;
+using Main;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace App.Tests
+namespace Main.Tests
 {
     [TestClass()]
     public class UserTests
@@ -194,7 +194,7 @@ namespace App.Tests
             User u = u_a;
 
             // Testing id and email are being used to create hashmap.
-            int correctHashCode = HashCode.Combine(u.Id, u.Email);
+            int correctHashCode = HashCode.Combine(u.Email, u.Name);
             int wrongHashCode = HashCode.Combine(u.Id, u.Name);
             int userHashCode = u.GetHashCode();
 
@@ -241,5 +241,29 @@ namespace App.Tests
             Assert.IsTrue(bc_areEquals);
         }
 
+        [TestMethod()]
+        public void CompareToTest()
+        {
+            User first = u_a;
+            User second = u_b;
+
+            // User a is created first.
+            bool aIsFirst = first.CompareTo(second) < 0;
+            Assert.IsTrue(aIsFirst);
+
+            // User b is created last.
+            bool bIsFirst = second.CompareTo(first) < 0;
+            Assert.IsFalse(bIsFirst);
+        }
+
+        [TestMethod()]
+        public void MakeAdminTest()
+        {
+            User admin = u_a;
+
+            Assert.IsFalse(admin.IsAdmin);
+            admin.MakeAdmin();
+            Assert.IsTrue(admin.IsAdmin);
+        }
     }
 }
