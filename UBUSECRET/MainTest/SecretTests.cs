@@ -49,6 +49,7 @@ namespace Main.Tests
         [TestMethod()]
         public void AddConsumerTest()
         {
+            // Also tests the HasAccess method.
             Secret s = s_a;
             User newUser = new User("Consumer", "of Secret", "consumer@user.com", "P@ssword");
 

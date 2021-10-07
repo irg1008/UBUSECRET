@@ -19,7 +19,7 @@ namespace DataAccess
         public DB()
         {
             // Inicilización de los elementos de la base de datos
-            User uAdmin = new User("Administrador", "Administración", "admin@ubu.es", "Password");
+            User uAdmin = new User("Administrador", "Administración", "admin@ubusecret.es", "Password");
             uAdmin.MakeAdmin();
             uAdmin.Activate();
             uAdmin.ChangePassword("Password", "P@ssword");
@@ -64,12 +64,26 @@ namespace DataAccess
 
         public bool DeleteUser(Guid id)
         {
-            return tblUsers.Remove(id);
+            User u = ReadUser(id);
+
+            // Delete entries for user in secrets.
+            IList<Secret> secrets = tblSecrets.Values;
+
+            foreach (Secret secret in secrets)
+            {
+                bool isConsumer = secret.RemoveConsumer(u);
+
+                // Delete secret if owner.
+                if (!isConsumer && secret.IsOwner(u))
+                    DeleteSecret(secret);
+            }
+
+            return DeleteUser(u);
         }
 
         public bool DeleteUser(User user)
         {
-            return DeleteUser(user.Id);
+            return tblUsers.Remove(user.Id);
         }
 
         public bool DeleteUser(string email)
