@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DBTests\\DBTests.csproj": {}
+    "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DBTests\\DBTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DBTests\\DBTests.csproj": {
+    "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DBTests\\DBTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DBTests\\DBTests.csproj",
+        "projectUniqueName": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DBTests\\DBTests.csproj",
         "projectName": "DBTests",
-        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DBTests\\DBTests.csproj",
-        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DBTests\\obj\\",
+        "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DBTests\\DBTests.csproj",
+        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DBTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,14 +25,15 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj": {
-                "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj"
+              "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\DB.csproj": {
+                "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\DB.csproj"
               }
             }
           }
@@ -83,20 +84,20 @@
         }
       }
     },
-    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj": {
+    "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
+        "projectUniqueName": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\DB.csproj",
         "projectName": "DB",
-        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
-        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\obj\\",
+        "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\DB.csproj",
+        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\DB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -104,14 +105,15 @@
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj": {
-                "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj"
+              "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj": {
+                "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj"
               }
             }
           }
@@ -144,20 +146,20 @@
         }
       }
     },
-    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj": {
+    "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj",
+        "projectUniqueName": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj",
-        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\obj\\",
+        "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj",
+        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -165,14 +167,15 @@
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
-                "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj"
+              "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj"
               }
             }
           }
@@ -205,20 +208,20 @@
         }
       }
     },
-    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
+    "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\obj\\",
+        "projectPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pablo\\OneDrive\\visual-workspace\\Nueva carpeta\\UBUSECRET\\UBUSECRET\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -226,7 +229,8 @@
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {

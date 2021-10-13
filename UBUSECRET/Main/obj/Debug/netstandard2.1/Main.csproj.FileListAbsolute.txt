@@ -37,3 +37,16 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CopyComplete
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.dll
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.deps.json
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\bin\Debug\netstandard2.1\Utils.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\bin\Debug\netstandard2.1\Utils.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CopyComplete
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.pdb

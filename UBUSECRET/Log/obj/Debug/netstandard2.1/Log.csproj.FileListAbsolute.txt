@@ -43,3 +43,18 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.csproj.CopyComplete
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.dll
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Log.deps.json
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Log.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Log.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Main.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Utils.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Main.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\bin\Debug\netstandard2.1\Utils.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.csproj.CopyComplete
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Log\obj\Debug\netstandard2.1\Log.pdb
