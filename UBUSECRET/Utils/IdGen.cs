@@ -2,17 +2,11 @@
 {
     public class IdGen
     {
-        private static int userId = 0;
-        private static int secretId = 0;
+        private static int id = 0;
 
-        public static int NewUserId()
+        public int NewId()
         {
-            return userId++;
+            return id++;
         }        
-        
-        public static int NewSecretId()
-        {
-            return secretId++;
-        }
     }
 }

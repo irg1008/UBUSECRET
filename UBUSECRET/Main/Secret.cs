@@ -7,7 +7,7 @@ namespace Main
     public class Secret : IComparable<Secret>
     {
         private readonly RSAEncryption RSA = new RSAEncryption();
-
+        private readonly IdGen idGen = new IdGen();
 
         private readonly int id;
         private string title;
@@ -18,7 +18,7 @@ namespace Main
         /* CONSTRUCTORES */
         public Secret(string title, string message, User owner)
         {
-            id = IdGen.NewSecretId();
+            id = idGen.NewId();
             Title = title;
             Message = RSA.EncryptText(message);
             Owner = owner;

@@ -16,6 +16,8 @@ namespace Main
 
     public class User : IComparable<User>
     {
+        private readonly IdGen idGen = new IdGen();
+
         private readonly int id;
         private String name;
         private String surname;
@@ -29,7 +31,7 @@ namespace Main
         /* CONSTRUCTOR */
         public User(String name, String surname, String email, String initPassword)
         {
-            this.id = IdGen.NewUserId();
+            this.id = idGen.NewId();
             Name = name;
             Surname = surname;
             Email = email;
