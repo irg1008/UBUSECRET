@@ -40,6 +40,7 @@ namespace DataAccess.Tests
         [TestMethod()]
         public void ContainsSecretTest()
         {
+
             Assert.Fail();
         }
 
@@ -112,6 +113,8 @@ namespace DataAccess.Tests
         [TestMethod()]
         public void NextSecretTest()
         {
+
+
             Assert.Fail();
         }
 

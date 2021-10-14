@@ -38,6 +38,7 @@ namespace DataAccess
 
         public bool ContainsUser(User user)
         {
+            if (user == null) return false;
             return ContainsUser(user.Id);
         }
 
@@ -65,6 +66,12 @@ namespace DataAccess
         public bool DeleteUser(Guid id)
         {
             User u = ReadUser(id);
+            return DeleteUser(u);
+        }
+
+        public bool DeleteUser(User user)
+        {
+            if (user == null) return false;
 
             // Delete entries for user in secrets.
             IList<Secret> secrets = tblSecrets.Values;
@@ -78,11 +85,6 @@ namespace DataAccess
                     DeleteSecret(secret);
             }
 
-            return DeleteUser(u);
-        }
-
-        public bool DeleteUser(User user)
-        {
             return tblUsers.Remove(user.Id);
         }
 
@@ -94,12 +96,14 @@ namespace DataAccess
 
         public bool InsertSecret(Secret secret)
         {
+            if (secret == null) return null;
             tblSecrets.Add(secret.Id, secret);
             return true;
         }
 
         public bool InsertUser(User user)
         {
+            if (user == null) return false;
             tblUsers.Add(user.Id, user);
             return true;
         }
@@ -144,27 +148,33 @@ namespace DataAccess
 
         public Secret ReadSecret(Guid id)
         {
+            if (!ContainsSecret(id)) return null;
             return tblSecrets[id];
         }
 
         public Secret ReadSecret(Secret secret)
         {
+            if (secret == null) return null;
             return ReadSecret(secret.Id);
         }
 
         public User ReadUser(Guid id)
         {
+            if (!ContainsUser(id)) return null;
             return tblUsers[id];
         }
 
         public User ReadUser(string email)
         {
-            User u = tblUsers.Where(user => user.Value.Email == email).First().Value;
+            var userList = tblUsers.Where(user => user.Value.Email == email);
+            if (userList.Count() == 0) return null;
+            User u = userList.First().Value;
             return ReadUser(u);
         }
 
         public User ReadUser(User user)
         {
+            if (user == null) return null;
             return ReadUser(user.Id);
         }
 
