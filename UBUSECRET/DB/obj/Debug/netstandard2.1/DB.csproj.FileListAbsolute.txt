@@ -43,3 +43,18 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.csproj.CopyComplete
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.dll
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\DB.deps.json
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\DB.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\DB.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\Main.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\Utils.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\Main.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\bin\Debug\netstandard2.1\Utils.pdb
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.csproj.CopyComplete
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.dll
+C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\DB\obj\Debug\netstandard2.1\DB.pdb

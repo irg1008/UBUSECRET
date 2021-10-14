@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography;
+using Utils;
 
 
 namespace Main
@@ -15,7 +16,7 @@ namespace Main
 
     public class User : IComparable<User>
     {
-        private readonly Guid id;
+        private readonly int id;
         private String name;
         private String surname;
         private String email;
@@ -28,7 +29,7 @@ namespace Main
         /* CONSTRUCTOR */
         public User(String name, String surname, String email, String initPassword)
         {
-            this.id = Guid.NewGuid();
+            this.id = IdGen.NewUserId();
             Name = name;
             Surname = surname;
             Email = email;
@@ -40,7 +41,7 @@ namespace Main
         }
 
         /* GETTERS AND SETTERS */
-        public Guid Id => id;
+        public int Id => id;
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Email { get => email; set => email = value; }
@@ -121,7 +122,7 @@ namespace Main
 
         public int CompareTo(User other)
         {
-            return Id.CompareTo(other.Id);
+            return Email.CompareTo(other.Email);
         }
     }
 

@@ -9,7 +9,7 @@ namespace Main
         private readonly RSAEncryption RSA = new RSAEncryption();
 
 
-        private readonly Guid id;
+        private readonly int id;
         private string title;
         private byte[] message;
         private User owner;
@@ -18,7 +18,7 @@ namespace Main
         /* CONSTRUCTORES */
         public Secret(string title, string message, User owner)
         {
-            id = Guid.NewGuid() ;
+            id = IdGen.NewSecretId();
             Title = title;
             Message = RSA.EncryptText(message);
             Owner = owner;
@@ -26,7 +26,7 @@ namespace Main
         }
 
         /* GETTERS AND SETTERS */
-        public Guid Id => id;
+        public int Id => id;
         public string Title { get => title; set => title = value; }
         public byte[] Message { get => message; set => message = value; }
         public User Owner { get => owner; set => owner = value; }

@@ -12,11 +12,11 @@ namespace Interfaces
 
         // USER.
         // ----------
-        User ReadUser(Guid id);
+        User ReadUser(int id);
         User ReadUser(String email);
         User ReadUser(User user);
 
-        bool DeleteUser(Guid id);
+        bool DeleteUser(int id);
         bool DeleteUser(String email);
         bool DeleteUser(User user);
 
@@ -25,7 +25,7 @@ namespace Interfaces
         bool InsertUser(User user);
 
         bool ContainsUser(User user);
-        bool ContainsUser(Guid id);
+        bool ContainsUser(int id);
         bool ContainsUser(String email);
 
         int UserCount();
@@ -37,10 +37,10 @@ namespace Interfaces
 
         // SECRET.
         // ----------
-        Secret ReadSecret(Guid id);
+        Secret ReadSecret(int id);
         Secret ReadSecret(Secret secret);
 
-        bool DeleteSecret(Guid id);
+        bool DeleteSecret(int id);
         bool DeleteSecret(Secret secret);
 
         bool UpdateSecret(Secret secret);
@@ -48,7 +48,7 @@ namespace Interfaces
         bool InsertSecret(Secret secret);
 
         bool ContainsSecret(Secret secret);
-        bool ContainsSecret(Guid id);
+        bool ContainsSecret(int id);
 
         int SecretCount();
 

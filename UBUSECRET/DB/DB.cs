@@ -11,10 +11,10 @@ namespace DataAccess
 {
     public class DB : IDB
     {
-        private int currentUser = 0;
-        private int currentSecret = 0;
-        private readonly SortedList<Guid, User> tblUsers = new SortedList<Guid, User>();
-        private readonly SortedList<Guid, Secret> tblSecrets = new SortedList<Guid, Secret>();
+        private int currentUser = -1;
+        private int currentSecret = -1;
+        private readonly SortedList<int, User> tblUsers = new SortedList<int, User>();
+        private readonly SortedList<int, Secret> tblSecrets = new SortedList<int, Secret>();
 
         public DB()
         {
@@ -28,21 +28,22 @@ namespace DataAccess
 
         public bool ContainsSecret(Secret secret)
         {
+            if (secret is null) return false;
             return ContainsSecret(secret.Id);
         }
 
-        public bool ContainsSecret(Guid id)
+        public bool ContainsSecret(int id)
         {
             return tblSecrets.ContainsKey(id);
         }
 
         public bool ContainsUser(User user)
         {
-            if (user == null) return false;
+            if (user is null) return false;
             return ContainsUser(user.Id);
         }
 
-        public bool ContainsUser(Guid id)
+        public bool ContainsUser(int id)
         {
             return tblUsers.ContainsKey(id);
         }
@@ -53,17 +54,18 @@ namespace DataAccess
             return ContainsUser(u);
         }
 
-        public bool DeleteSecret(Guid id)
+        public bool DeleteSecret(int id)
         {
             return tblSecrets.Remove(id);
         }
 
         public bool DeleteSecret(Secret secret)
         {
+            if (!ContainsSecret(secret)) return false;
             return DeleteSecret(secret.Id);
         }
 
-        public bool DeleteUser(Guid id)
+        public bool DeleteUser(int id)
         {
             User u = ReadUser(id);
             return DeleteUser(u);
@@ -71,17 +73,17 @@ namespace DataAccess
 
         public bool DeleteUser(User user)
         {
-            if (user == null) return false;
+            if (!ContainsUser(user)) return false;
 
             // Delete entries for user in secrets.
             IList<Secret> secrets = tblSecrets.Values;
 
             foreach (Secret secret in secrets)
             {
-                bool isConsumer = secret.RemoveConsumer(u);
+                bool isConsumer = secret.RemoveConsumer(user);
 
                 // Delete secret if owner.
-                if (!isConsumer && secret.IsOwner(u))
+                if (!isConsumer && secret.IsOwner(user))
                     DeleteSecret(secret);
             }
 
@@ -96,14 +98,14 @@ namespace DataAccess
 
         public bool InsertSecret(Secret secret)
         {
-            if (secret == null) return null;
+            if (ContainsSecret(secret) || secret is null) return false;
             tblSecrets.Add(secret.Id, secret);
             return true;
         }
 
         public bool InsertUser(User user)
         {
-            if (user == null) return false;
+            if (ContainsUser(user) || user is null) return false;
             tblUsers.Add(user.Id, user);
             return true;
         }
@@ -122,6 +124,7 @@ namespace DataAccess
         {
             if (IndexOutsideSecrets(currentSecret + 1)) return null;
             currentSecret++;
+            Console.WriteLine(currentSecret);
             return tblSecrets.ElementAt(currentSecret).Value;
         }
 
@@ -146,7 +149,7 @@ namespace DataAccess
             return tblUsers.ElementAt(currentUser).Value;
         }
 
-        public Secret ReadSecret(Guid id)
+        public Secret ReadSecret(int id)
         {
             if (!ContainsSecret(id)) return null;
             return tblSecrets[id];
@@ -154,11 +157,11 @@ namespace DataAccess
 
         public Secret ReadSecret(Secret secret)
         {
-            if (secret == null) return null;
+            if (!ContainsSecret(secret)) return null;
             return ReadSecret(secret.Id);
         }
 
-        public User ReadUser(Guid id)
+        public User ReadUser(int id)
         {
             if (!ContainsUser(id)) return null;
             return tblUsers[id];
@@ -174,7 +177,7 @@ namespace DataAccess
 
         public User ReadUser(User user)
         {
-            if (user == null) return null;
+            if (!ContainsUser(user)) return null;
             return ReadUser(user.Id);
         }
 
