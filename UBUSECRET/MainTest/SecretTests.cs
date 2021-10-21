@@ -9,7 +9,7 @@ namespace Main.Tests
     [TestClass()]
     public class SecretTests
     {
-        readonly User owner = new User("Owner", "of secrets", "owner@user.com", "P@ssword");
+        readonly User owner = new User("Owner", "owner@user.com", "P@ssword");
         Secret s_a;
         Secret s_b;
 
@@ -23,6 +23,8 @@ namespace Main.Tests
         [TestMethod()]
         public void SecretTest()
         {
+            Assert.AreEqual(s_b.Id, s_a.Id + 1);
+
             Secret s = s_a;
 
             Assert.IsNotNull(s.Id);
@@ -39,7 +41,7 @@ namespace Main.Tests
             Secret s = s_a;
             User secretOwner = s.Owner;
 
-            User wrongOwner = new User("Wrong", "Owner", "wrong@user.com", "P@ssword");
+            User wrongOwner = new User("Wrong", "wrong@user.com", "P@ssword");
             User correctOwner = owner;
 
             Assert.AreNotEqual(wrongOwner, secretOwner);
@@ -51,7 +53,7 @@ namespace Main.Tests
         {
             // Also tests the HasAccess method.
             Secret s = s_a;
-            User newUser = new User("Consumer", "of Secret", "consumer@user.com", "P@ssword");
+            User newUser = new User("Consumer", "consumer@user.com", "P@ssword");
 
             bool addingOwnerAsConsumer = s.AddConsumer(owner);
             bool addingCorrectconsumer = s.AddConsumer(newUser);
@@ -66,7 +68,7 @@ namespace Main.Tests
         public void RemoveConsumerTest()
         {
             Secret s = s_a;
-            User consumer = new User("Consumer", "of Secret", "consumer@user.com", "P@ssword");
+            User consumer = new User("Consumer", "consumer@user.com", "P@ssword");
 
             // Add consumer.
             Assert.IsTrue(s.UsersWithAccess() == 0);

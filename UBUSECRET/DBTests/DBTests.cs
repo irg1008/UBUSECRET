@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DataAccess;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Main;
 using System.Threading;
 
-namespace DataAccess.Tests
+namespace Data.Tests
 {
     [TestClass()]
     public class DBTests
@@ -20,15 +20,15 @@ namespace DataAccess.Tests
         [TestInitialize()]
         public void Startup()
         {
-            db = new DB();
-            user = new User("User", "Of Secrets", "user@ubusecret.com", "P@ssw0rd");
+            db = DB.GetInstance();
+            user = new User("User", "user@ubusecret.com", "P@ssw0rd");
             secret = new Secret("Secret", "Hidden Message", user);
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-            db = null;
+            DB.Reset();
             user = null;
             secret = null;
         }
@@ -360,9 +360,13 @@ namespace DataAccess.Tests
             // Insert user.
             db.InsertUser(user);
 
-            // Read secret.
+            // Read user.
             User u = db.ReadUser(user.Id);
             Assert.AreEqual(user, u);
+
+            // Read null user.
+            u = db.ReadUser((string)null);
+            Assert.IsNull(u);
         }
 
         [TestMethod()]
@@ -371,7 +375,7 @@ namespace DataAccess.Tests
             // Insert user.
             db.InsertUser(user);
 
-            // Read secret.
+            // Read user.
             User u = db.ReadUser(user.Email);
             Assert.AreEqual(user, u);
         }

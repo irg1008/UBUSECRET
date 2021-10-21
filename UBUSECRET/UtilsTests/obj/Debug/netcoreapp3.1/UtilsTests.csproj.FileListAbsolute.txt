@@ -398,3 +398,4 @@ C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Utils
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\UtilsTests\obj\Debug\netcoreapp3.1\UtilsTests.dll
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\UtilsTests\obj\Debug\netcoreapp3.1\UtilsTests.pdb
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\UtilsTests\obj\Debug\netcoreapp3.1\UtilsTests.genruntimeconfig.cache
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\UtilsTests\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll

@@ -20,7 +20,6 @@ namespace Main
 
         private readonly int id;
         private String name;
-        private String surname;
         private String email;
         private String password;
         private String lastIP;
@@ -29,14 +28,13 @@ namespace Main
         private bool isAdmin;
 
         /* CONSTRUCTOR */
-        public User(String name, String surname, String email, String initPassword)
+        public User(String name, String email, String initPassword)
         {
             this.id = idGen.NewId();
             Name = name;
-            Surname = surname;
             Email = email;
             Password = this.Hash(initPassword);
-            State = State.PREFETCHED;
+            State = State.REQUESTED;
             IsAdmin = false;
             LastIP = null;
             LastSeen = DateTime.Now;
@@ -45,7 +43,6 @@ namespace Main
         /* GETTERS AND SETTERS */
         public int Id => id;
         public string Name { get => name; set => name = value; }
-        public string Surname { get => surname; set => surname = value; }
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
         public string LastIP { get => lastIP; set => lastIP = value; }

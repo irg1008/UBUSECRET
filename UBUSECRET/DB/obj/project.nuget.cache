@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "GRZwKn/IOLdWz7TZGNw6o3Cd06dbRH4swMi+sLXPKeDZXVQ053IUY0+A05jECySdMCkxHDyQF8FJo/7K3HheHg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
+  "dgSpecHash": "T0MrHxyL5N/1nog/bLbe+/cfH8zy/0NIgzJijVZZk0Ia2g4ha0PMZ5omaiMTCPJFEb3DPc/gxLU3IwhoFMJs1g==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\DB\\DB.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto Main no es compatible con netstandard2.0 (.NETStandard,Version=v2.0). El proyecto Main admite: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Main",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

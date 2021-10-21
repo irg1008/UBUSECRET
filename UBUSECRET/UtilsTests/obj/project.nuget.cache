@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "s8Oku08YXExGOvK+UAfyfsLIkms1oktgP6Fyo7s9Wmjs68Dj3Vm53YajH51G4upxeOwKy10YWEjfBI7uUd1dfA==",
+  "dgSpecHash": "ZGN1i54h5LQSzFvxrSvF0o7gSwAbGpWvBOurdh5DTlioFaFMXIRP8PiYpU/Vgwbh7SFNo4wiWfFltjXDVc9Zjw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",

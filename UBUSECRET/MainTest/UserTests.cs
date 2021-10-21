@@ -17,19 +17,21 @@ namespace Main.Tests
         [TestInitialize()]
         public void Startup()
         {
-            u_a = new User("a", "user a", "a@user.com", "P@ssword");
-            u_b = new User("b", "user b", "b@user.com", "P@ssword");
-            u_c = new User("c", "user c", "c@user.com", "P@ssword");
+            u_a = new User("a", "a@user.com", "P@ssword");
+            u_b = new User("b", "b@user.com", "P@ssword");
+            u_c = new User("c", "c@user.com", "P@ssword");
         }
 
         [TestMethod()]
         public void UserTest()
         {
+            Assert.AreEqual(u_b.Id, u_a.Id + 1);
+            Assert.AreEqual(u_c.Id, u_b.Id + 1);
+
             var u = u_a;
 
             Assert.IsNotNull(u.Id);
             Assert.IsNotNull(u.Name);
-            Assert.IsNotNull(u.Surname);
             Assert.IsNotNull(u.Email);
             Assert.IsNotNull(u.Password);
             Assert.IsNotNull(u.State);

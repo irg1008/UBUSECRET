@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BZ39WXJqxYn2Zv6K/y+5maIZQh9WqNYhFBB2omdqI74XhRLgPPP5T+/IzqMAWQ012IdipqOm7V1vCPpAEe0hqQ==",
+  "dgSpecHash": "SKJ8X44Rr0TSRn3CPTFzbrICcb7YINWIbnxnQWmNu25WAqMFrEGflp9uVO8oof4RDrWpucA6Pr6T3TbyyoYN5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

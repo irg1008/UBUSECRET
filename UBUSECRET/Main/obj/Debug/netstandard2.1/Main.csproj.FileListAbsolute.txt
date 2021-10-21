@@ -50,3 +50,16 @@ C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CopyComplete
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.dll
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.pdb
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.deps.json
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\bin\Debug\netstandard2.1\Main.pdb
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\bin\Debug\netstandard2.1\Utils.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\bin\Debug\netstandard2.1\Utils.pdb
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.AssemblyReference.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.AssemblyInfoInputs.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.AssemblyInfo.cs
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CoreCompileInputs.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.csproj.CopyComplete
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Main\obj\Debug\netstandard2.1\Main.pdb

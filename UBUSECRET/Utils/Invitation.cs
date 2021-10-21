@@ -4,20 +4,22 @@ namespace Utils
 {
     class Invitation
     {
-        private readonly Guid id;
-        private readonly Guid secretId;
+        private readonly IdGen idGen = new IdGen();
+
+        private readonly int id;
+        private readonly int secretId;
         private readonly DateTime limitDate;
         // TODO?: Only allowed to some users. private List<User> allowedUsers;
 
-        public Invitation(Guid secretId, int daysToExpire)
+        public Invitation(int secretId, int daysToExpire)
         {
-            this.id = Guid.NewGuid();
+            this.id = idGen.NewId();
             this.secretId = secretId;
             this.limitDate = DateTime.Now.AddDays(daysToExpire);
         }
 
-        public Guid Id => id;
-        public Guid SecretId => secretId;
+        public int Id => id;
+        public int SecretId => secretId;
         public DateTime LimitDate => limitDate;
 
         public String createLink()

@@ -38,3 +38,13 @@ C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Utils
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.csproj.CoreCompileInputs.cache
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.dll
 C:\Users\pablo\OneDrive\visual-workspace\Nueva carpeta\UBUSECRET\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.pdb
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\bin\Debug\netstandard2.1\Utils.deps.json
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\bin\Debug\netstandard2.1\Utils.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\bin\Debug\netstandard2.1\Utils.pdb
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.csproj.AssemblyReference.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.AssemblyInfoInputs.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.AssemblyInfo.cs
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.csproj.CoreCompileInputs.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Utils\obj\Debug\netstandard2.1\Utils.pdb
