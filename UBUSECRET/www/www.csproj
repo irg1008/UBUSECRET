@@ -91,7 +91,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="auth\NewPassword.aspx" />
     <Content Include="auth\SignUp.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="lib\font-awesome\css\all.css" />
     <Content Include="lib\font-awesome\css\all.min.css" />
     <Content Include="lib\font-awesome\css\brands.css" />
@@ -135,12 +137,26 @@
     <Content Include="auth\LogIn.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="auth\NewPassword.aspx.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\NewPassword.aspx.designer.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="auth\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="auth\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\Nested_Form.master.cs">
       <DependentUpon>Nested_Form.master</DependentUpon>

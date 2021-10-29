@@ -1,0 +1,24 @@
+﻿<%@ MasterType VirtualPath="~/master/Main.master" %>
+
+<%@ Master Language="C#" MasterPageFile="~/master/Main.Master" AutoEventWireup="true" CodeBehind="Nested_Form.master.cs" Inherits="www.Nested_Form" %>
+
+<asp:Content ContentPlaceHolderID="body" runat="server">
+    <asp:HyperLink runat="server" NavigateUrl="~/default.aspx" CssClass="flex gap-6 justify-center items-center">
+        <img src="../static/logo.png" class="h-16 transform -rotate-12" alt="logo" />
+        <h1>ubusecret</h1>
+    </asp:HyperLink>
+    <div class="triangle"></div>
+    <form id="form" class="rounded-xl bg-white p-8 shadow-md" runat="server" autocomplete="on" novalidate="novalidate">
+        <h2>
+            <asp:ContentPlaceHolder ID="Form_Title" runat="server"></asp:ContentPlaceHolder>
+        </h2>
+        <hr />
+        <div class="gap-3 flex flex-col my-6">
+            <asp:ContentPlaceHolder ID="Form_Body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="mt-6 px-4 flex justify-between items-center">
+            <asp:ContentPlaceHolder ID="Form_Bottom" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</asp:Content>

@@ -74,6 +74,10 @@ namespace Main.Tests
             isCorrect = changeIsCorrect(State.ACTIVE);
             Assert.IsFalse(isCorrect);
 
+            // INACTIVE => REQUEST.
+            isCorrect = changeIsCorrect(State.INACTIVE);
+            Assert.IsFalse(isCorrect);
+
             // BANNED => REQUEST.
             isCorrect = changeIsCorrect(State.BANNED);
             Assert.IsFalse(isCorrect);
@@ -105,6 +109,10 @@ namespace Main.Tests
 
             // ACTIVE => AUTHORIZED.
             isCorrect = changeIsCorrect(State.ACTIVE);
+            Assert.IsFalse(isCorrect);
+
+            // INACTIVE => AUTHORIZED.
+            isCorrect = changeIsCorrect(State.INACTIVE);
             Assert.IsFalse(isCorrect);
 
             // BANNED => AUTHORIZED.
@@ -140,9 +148,13 @@ namespace Main.Tests
             isCorrect = changeIsCorrect(State.ACTIVE);
             Assert.IsFalse(isCorrect);
 
+            // INACTIVE => ACTIVE.
+            isCorrect = changeIsCorrect(State.INACTIVE);
+            Assert.IsTrue(isCorrect);
+
             // BANNED => ACTIVE.
             isCorrect = changeIsCorrect(State.BANNED);
-            Assert.IsTrue(isCorrect);
+            Assert.IsFalse(isCorrect);
         }
 
         [TestMethod()]
@@ -173,9 +185,90 @@ namespace Main.Tests
             isCorrect = changeIsCorrect(State.ACTIVE);
             Assert.IsTrue(isCorrect);
 
+            // INACTIVE => BANNED.
+            isCorrect = changeIsCorrect(State.INACTIVE);
+            Assert.IsTrue(isCorrect);
+
             // BANNED => BANNED.
             isCorrect = changeIsCorrect(State.BANNED);
             Assert.IsFalse(isCorrect);
+        }
+
+        [TestMethod()]
+        public void InactivateTest()
+        {
+            var u = u_a;
+            bool isCorrect;
+
+            bool changeIsCorrect(State newState)
+            {
+                u.State = newState;
+                return u.Unactivate();
+            }
+
+            // PREFETCHED => INACTIVE.
+            isCorrect = changeIsCorrect(State.PREFETCHED);
+            Assert.IsFalse(isCorrect);
+
+            // REQUESTED => INACTIVE.
+            isCorrect = changeIsCorrect(State.REQUESTED);
+            Assert.IsFalse(isCorrect);
+
+            // AUTHORIZED => INACTIVE.
+            isCorrect = changeIsCorrect(State.AUTHORIZED);
+            Assert.IsFalse(isCorrect);
+
+            // ACTIVE => INACTIVE.
+            isCorrect = changeIsCorrect(State.ACTIVE);
+            Assert.IsTrue(isCorrect);
+
+            // INACTIVE => INACTIVE.
+            isCorrect = changeIsCorrect(State.INACTIVE);
+            Assert.IsFalse(isCorrect);
+
+            // BANNED => INACTIVE.
+            isCorrect = changeIsCorrect(State.BANNED);
+            Assert.IsFalse(isCorrect);
+        }
+
+        [TestMethod()]
+        public void UnbanTest()
+        {
+            var u = u_a;
+            bool isCorrect;
+
+            bool changeIsCorrect(State newState)
+            {
+                u.State = newState;
+                return u.Unban();
+            }
+
+            // "UNBANNED" = INACTIVE.
+            // Same as unactivate but only reacheable from banned.
+
+            // PREFETCHED => INACTIVE.
+            isCorrect = changeIsCorrect(State.PREFETCHED);
+            Assert.IsFalse(isCorrect);
+
+            // REQUESTED => INACTIVE.
+            isCorrect = changeIsCorrect(State.REQUESTED);
+            Assert.IsFalse(isCorrect);
+
+            // AUTHORIZED => INACTIVE.
+            isCorrect = changeIsCorrect(State.AUTHORIZED);
+            Assert.IsFalse(isCorrect);
+
+            // ACTIVE => INACTIVE.
+            isCorrect = changeIsCorrect(State.ACTIVE);
+            Assert.IsFalse(isCorrect);
+
+            // INACTIVE => INACTIVE.
+            isCorrect = changeIsCorrect(State.INACTIVE);
+            Assert.IsFalse(isCorrect);
+
+            // BANNED => INACTIVE.
+            isCorrect = changeIsCorrect(State.BANNED);
+            Assert.IsTrue(isCorrect);
         }
 
         [TestMethod()]
@@ -263,9 +356,16 @@ namespace Main.Tests
         {
             User admin = u_a;
 
+
+            // New admin should automatically be authorized.
             Assert.IsFalse(admin.IsAdmin);
+            Assert.AreEqual(admin.State, State.PREFETCHED);
+
+            // We make the user an admin.
             admin.MakeAdmin();
+
             Assert.IsTrue(admin.IsAdmin);
+            Assert.AreEqual(admin.State, State.AUTHORIZED);
         }
     }
 }

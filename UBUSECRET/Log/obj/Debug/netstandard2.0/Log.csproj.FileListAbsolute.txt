@@ -1,0 +1,15 @@
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Log.deps.json
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Log.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Log.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Main.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Utils.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Main.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\bin\Debug\netstandard2.0\Utils.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.csproj.AssemblyReference.cache
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.AssemblyInfoInputs.cache
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.AssemblyInfo.cs
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.csproj.CopyComplete
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Log\obj\Debug\netstandard2.0\Log.pdb

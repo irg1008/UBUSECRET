@@ -10,6 +10,7 @@ namespace Main
         PREFETCHED,
         REQUESTED,
         AUTHORIZED,
+        INACTIVE,
         ACTIVE,
         BANNED
     }
@@ -34,7 +35,7 @@ namespace Main
             Name = name;
             Email = email;
             Password = this.Hash(initPassword);
-            State = State.REQUESTED;
+            State = State.PREFETCHED;
             IsAdmin = false;
             LastIP = null;
             LastSeen = DateTime.Now;
@@ -66,23 +67,44 @@ namespace Main
             return true;
         }
 
+        public bool Unactivate()
+        {
+            if (State != State.ACTIVE) return false;
+            State = State.INACTIVE;
+            return true;
+        }
+
         public bool Activate()
         {
-            if (State != State.AUTHORIZED && State != State.BANNED) return false;
+            if (State != State.AUTHORIZED && State != State.INACTIVE) return false;
             State = State.ACTIVE;
             return true;
         }
 
         public bool Ban()
         {
-            if (State != State.ACTIVE) return false;
+            if (State != State.ACTIVE && State != State.INACTIVE) return false;
             State = State.BANNED;
+            return true;
+        }
+
+        public bool Unban()
+        {
+            if (State != State.BANNED) return false;
+            State = State.INACTIVE;
             return true;
         }
 
         public void MakeAdmin()
         {
             IsAdmin = true;
+
+            // If new user.
+            if (State == State.PREFETCHED)
+            {
+                Request();
+                Authorize();
+            }
         }
 
         public bool CheckPasword(String password)
@@ -94,7 +116,7 @@ namespace Main
         {
             bool isOldCorrect = this.CheckPasword(oldPass);
             if (!isOldCorrect) return false;
-            
+
             Password = this.Hash(newPass);
             return true;
         }

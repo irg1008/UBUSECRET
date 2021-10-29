@@ -1,0 +1,114 @@
+﻿body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(0deg, #141E30 0%, #243B55 100%);
+    box-sizing: content-box;
+}
+
+input:not([type=submit]), input:not([type=button]) {
+    width: 100%;
+    min-height: 30px;
+    padding: 8px 12px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #54677C;
+    margin: 8px 0;
+}
+
+    input:not([type=submit]):focus, input:not([type=button]):focus {
+        outline: 3px solid rgba(84, 103, 124, 0.4)
+    }
+
+
+button, input[type=button] {
+    text-transform: uppercase;
+    padding: 0.6em 1.2em;
+    font-size: 0.8em;
+    background-color: #243B54;
+    color: whitesmoke;
+    border-radius: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    button:hover {
+        opacity: 90%;
+    }
+
+    button:active {
+        transform: scale(0.96);
+    }
+
+    button > img {
+        max-height: 25px;
+    }
+
+h1, h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 3em;
+}
+
+h2 {
+    margin: 12px 0;
+    color: #19263B;
+    font-size: 1.8em;
+}
+
+form {
+    width: 32em;
+}
+
+.triangle {
+    border-width: 40px 30px;
+    margin-bottom: -5px;
+    border-color: transparent transparent #E3E5E6 transparent;
+}
+
+.bg {
+    z-index: -1;
+}
+
+.bg-text {
+    font-size: 20em;
+}
+
+@keyframes shake {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+    animation-delay: 1s;
+}
+
+.error {
+    color: red;
+}
+
+.pop-up {
+    min-height: 5em;
+    min-width: 8em;
+    max-width: 30em;
+}
