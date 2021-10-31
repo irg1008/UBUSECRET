@@ -28,9 +28,10 @@ namespace Data.Tests
         [TestCleanup]
         public void CleanUp()
         {
-            DB.Reset();
             user = null;
             secret = null;
+            db = null;
+            DB.Reset();
         }
 
         [TestMethod()]
@@ -436,6 +437,61 @@ namespace Data.Tests
             db.InsertUser(user);
             count = db.UserCount();
             Assert.AreEqual(count, 2);
+        }
+
+        [TestMethod()]
+        public void UserListTest()
+        {
+            // Insert user.
+            db.InsertUser(user);
+
+            // Check is in list.
+            IList<User> userList = db.UserList();
+            bool isInList = userList.Contains(user);
+            Assert.IsTrue(isInList);
+        }
+
+        [TestMethod()]
+        public void SecretListTest()
+        {
+            // Insert user.
+            db.InsertSecret(secret);
+
+            // Check is in list.
+            IList<Secret> secretList = db.SecretList();
+            bool isInList = secretList.Contains(secret);
+            Assert.IsTrue(isInList);
+        }
+
+        [TestMethod()]
+        public void GetInvitedSecretsTest()
+        {
+            User guest = new User("Guest", "guest@ubusecret.es", "P@ssword2");
+
+            // Insert both users and secret.
+            db.InsertUser(guest);
+            db.InsertUser(user);
+            db.InsertSecret(secret);
+
+            // Add conumer to secret and update.
+            secret.AddConsumer(guest);
+            db.UpdateSecret(secret);
+
+            // Get all secrets shared with guest.
+            var sharedSecrets = db.GetInvitedSecrets(guest);
+            bool secretIsCorrectlyShared = sharedSecrets.Contains(secret);
+            Assert.IsTrue(secretIsCorrectlyShared);
+        }
+
+        [TestMethod()]
+        public void GetUserSecretsTest()
+        {
+            // InsertSecretTest user and secret.
+            db.InsertUser(user);
+            db.InsertSecret(secret);
+
+            var userSecrets = db.GetUserSecrets(user);
+            Assert.IsTrue(userSecrets.Contains(secret));
         }
     }
 }

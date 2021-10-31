@@ -102,8 +102,8 @@ namespace Main
             // If new user.
             if (State == State.PREFETCHED)
             {
-                Request();
-                Authorize();
+                // Set to inactive.
+                State = State.INACTIVE;
             }
         }
 

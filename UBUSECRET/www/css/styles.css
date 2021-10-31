@@ -6,9 +6,10 @@
     position: relative;
     background: linear-gradient(0deg, #141E30 0%, #243B55 100%);
     box-sizing: content-box;
+    overflow-wrap: break-word;
 }
 
-input:not([type=submit]), input:not([type=button]) {
+input:not([type="submit"]), input:not([type="button"]), textarea {
     width: 100%;
     min-height: 30px;
     padding: 8px 12px;
@@ -16,14 +17,14 @@ input:not([type=submit]), input:not([type=button]) {
     border-radius: 10px;
     border: 2px solid #54677C;
     margin: 8px 0;
+    color: black;
 }
 
-    input:not([type=submit]):focus, input:not([type=button]):focus {
+    input:not([type="submit"]):focus, input:not([type="button"]):focus, textarea:focus {
         outline: 3px solid rgba(84, 103, 124, 0.4)
     }
 
-
-button, input[type=button] {
+button, input[type="button"], input[type="submit"] {
     text-transform: uppercase;
     padding: 0.6em 1.2em;
     font-size: 0.8em;
@@ -36,19 +37,25 @@ button, input[type=button] {
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none !important;
 }
 
-    button:hover {
+    button:hover, input[type="button"]:hover, input[type="submit"]:hover {
         opacity: 90%;
     }
 
-    button:active {
+    button:active, input[type="button"]:active, input[type="submit"]:active {
         transform: scale(0.96);
     }
 
     button > img {
         max-height: 25px;
     }
+
+.admin:active {
+    border-bottom: 0px !important;
+    transform: initial;
+}
 
 h1, h2 {
     font-weight: bold;
@@ -62,11 +69,15 @@ h1 {
 
 h2 {
     margin: 12px 0;
-    color: #19263B;
     font-size: 1.8em;
+    color: #f0f0f0;
 }
 
-form {
+.blue {
+    color: #19263B;
+}
+
+.log-form {
     width: 32em;
 }
 
@@ -111,4 +122,80 @@ form {
     min-height: 5em;
     min-width: 8em;
     max-width: 30em;
+}
+
+.avatar {
+    border: 2px solid #243B55;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    max-width: 60em;
+}
+
+th, td {
+    padding: 2em;
+}
+
+th {
+    color: white;
+}
+
+td {
+    background-color: whitesmoke;
+}
+
+tr {
+    border: 1px solid white;
+}
+
+hr {
+    opacity: 40%;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear 1s forwards;
+}
+
+.eyes {
+    opacity: 0;
+    animation: fade-in 3s linear 1s forwards;
+}
+
+.logo-container {
+    animation: shake 0.2s linear 4s;
+}
+
+.logo-wrapper {
+    transform: rotate(5deg);
+}
+
+@keyframes shake {
+    0%, 50%, 100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 100;
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
 }

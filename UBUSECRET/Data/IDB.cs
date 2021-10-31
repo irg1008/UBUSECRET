@@ -55,5 +55,8 @@ namespace Data
         Secret NextSecret();
         Secret PreviousSecret();
         // ----------
+
+        List<Secret> GetUserSecrets(User user);
+        List<Secret> GetInvitedSecrets(User user);
     }
 }

@@ -364,8 +364,10 @@ namespace Main.Tests
             // We make the user an admin.
             admin.MakeAdmin();
 
+            // Assert is admin and new state is inactive.
+            // Admin do not need to create new password.
             Assert.IsTrue(admin.IsAdmin);
-            Assert.AreEqual(admin.State, State.AUTHORIZED);
+            Assert.AreEqual(admin.State, State.INACTIVE);
         }
     }
 }

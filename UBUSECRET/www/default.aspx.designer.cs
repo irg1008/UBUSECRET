@@ -11,7 +11,7 @@ namespace www
 {
 
 
-    public partial class _default
+    public partial class Default
     {
 
         /// <summary>
@@ -22,6 +22,15 @@ namespace www
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Dashboard;
+
+        /// <summary>
+        /// Control SecretList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::www.controls.SecretsControl SecretList;
 
         /// <summary>
         /// Control Home.

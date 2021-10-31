@@ -22,13 +22,12 @@ namespace www.auth
             if (!IsPostBack)
                 Master.Master.ShowPopUp("You need to set up a new password to activate your account. Don't worry, you only have to do this once.", PopUpType.INFO);
 
-
             // If user email is not correct.
             string userEmail = Request.QueryString["email"];
             bool isCorrectEmail = IsCorrectUserEmail(userEmail);
 
             if (!isCorrectEmail)
-                Response.Redirect("/auth/LogIn.aspx");
+                Response.Redirect("Error.aspx");
         }
 
         private bool IsCorrectUserEmail(string email)

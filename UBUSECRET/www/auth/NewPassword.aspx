@@ -1,6 +1,6 @@
 ﻿<%@ MasterType VirtualPath="~/master/Nested_Form.master" %>
 
-<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="NewPassword.aspx.cs" Inherits="www.auth.NewPassword" Title="Change Password" MaintainScrollPositionOnPostback="true" %>
+<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="NewPassword.aspx.cs" Inherits="www.auth.NewPassword" Title="Change Password" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Title">
     change password
@@ -9,9 +9,10 @@
 <asp:Content runat="server" ContentPlaceHolderID="Form_Body">
     <label>
         Old password
-        <asp:TextBox runat="server" ID="OldPassword_Input" TextMode="Password" Text="" placeholder="G6D6M4Q$Z7cYmb"></asp:TextBox>
+        <asp:TextBox autofocus="autofocus" runat="server" ID="OldPassword_Input" TextMode="Password" Text="" placeholder="G6D6M4Q$Z7cYmb"></asp:TextBox>
         <asp:Label CssClass="error" ID="OldPasswordError" runat="server" />
     </label>
+    <hr />
     <label>
         New password
         <asp:TextBox runat="server" ID="NewPassword_Input" TextMode="Password" Text="" placeholder="t^44c%pY**dJy5k$"></asp:TextBox>

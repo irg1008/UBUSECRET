@@ -1,6 +1,6 @@
 ﻿<%@ MasterType VirtualPath="~/master/Nested_Form.master" %>
 
-<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/LogIn.aspx.cs" Inherits="www.LogIn" Title="Log In" MaintainScrollPositionOnPostback="true" %>
+<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/LogIn.aspx.cs" Inherits="www.LogIn" Title="Log In" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Title">
     log in
@@ -9,7 +9,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="Form_Body">
     <label>
         Email
-        <asp:TextBox runat="server" ID="Email_Input" AutoCompleteType="Email" TextMode="Email" Text="" placeholder="example@email.com"></asp:TextBox>
+        <asp:TextBox autofocus="autofocus" runat="server" ID="Email_Input" AutoCompleteType="Email" TextMode="Email" Text="" placeholder="example@email.com"></asp:TextBox>
         <asp:Label CssClass="error" ID="EmailError" runat="server" />
     </label>
     <label>

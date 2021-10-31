@@ -1,6 +1,6 @@
 ﻿<%@ MasterType VirtualPath="~/master/Nested_Form.master" %>
 
-<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/SignUp.aspx.cs" Inherits="www.auth.SignUp" Title="Sign Up" MaintainScrollPositionOnPostback="true" %>
+<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/SignUp.aspx.cs" Inherits="www.auth.SignUp" Title="Sign Up" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Title">
     sign up

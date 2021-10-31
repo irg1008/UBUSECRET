@@ -18,20 +18,62 @@ namespace Data
         private DB()
         {
             // Inicilización de los elementos de la base de datos
-            User uAdmin = new User("Administrador", "admin@ubusecret.es", "P@ssword2");
+            User uAdmin = new User("Pepito", "admin@ubusecret.es", "P@ssword2");
             uAdmin.MakeAdmin();
+
             InsertUser(uAdmin);
         }
 
         private static DB _instance;
+        private static bool _dataLoaded;
 
         public static DB GetInstance()
         {
             if (_instance == null)
             {
                 _instance = new DB();
+                _dataLoaded = false;
             }
             return _instance;
+        }
+
+        public static void LoadSampleData()
+        {
+            if (_dataLoaded == false)
+            {
+                DB db = GetInstance();
+
+                // User with access.
+                User guest = new User("Guest", "guest@ubusecret.es", "P@ssword2");
+                guest.Request();
+                guest.Authorize();
+                guest.Activate();
+                guest.Unactivate();
+
+                // User that has to be authorized and set a new password.
+                User guest2 = new User("Guest 2", "guest_2@ubusecret.es", "P@ssword2");
+                guest2.Request();
+
+                // Sample secret of guest 1.
+                Secret gSecret = new Secret("Shared secret", "This is shared secret between users.", guest);
+
+                // Guest 1 shares secret 1 with guest 2.
+                gSecret.AddConsumer(guest2);
+
+                // We add couple of secrets to guest 2.
+                Secret secretGuest2_1 = new Secret("Secret Nº1", "You should not tell this to anyone.", guest2);
+                Secret secretGuest2_2 = new Secret("Secret Nº2", "No way you are able to know this.", guest2);
+
+                // Insert all sample data to DB.
+                db.InsertUser(guest);
+                db.InsertUser(guest2);
+                db.InsertSecret(gSecret);
+                db.InsertSecret(secretGuest2_1);
+                db.InsertSecret(secretGuest2_2);
+
+                // Confirm data load.
+                _dataLoaded = true;
+            }
         }
 
         public static void Reset()
@@ -89,7 +131,7 @@ namespace Data
             if (!ContainsUser(user)) return false;
 
             // Delete entries for user in secrets.
-            IList<Secret> secrets = tblSecrets.Values;
+            IList<Secret> secrets = SecretList();
 
             foreach (Secret secret in secrets)
             {
@@ -122,6 +164,16 @@ namespace Data
             if (ContainsUser(user) || user is null) return false;
             tblUsers.Add(user.Id, user);
             return true;
+        }
+
+        public IList<User> UserList()
+        {
+            return tblUsers.Values;
+        }
+
+        public IList<Secret> SecretList()
+        {
+            return tblSecrets.Values;
         }
 
         private bool IndexOutsideSecrets(int index)
@@ -217,6 +269,16 @@ namespace Data
         public int UserCount()
         {
             return tblUsers.Count;
+        }
+
+        public List<Secret> GetUserSecrets(User user)
+        {
+            return SecretList().Where(secret => secret.Owner == user).ToList();
+        }
+
+        public List<Secret> GetInvitedSecrets(User user)
+        {
+            return SecretList().Where(secret => secret.Consumers.Contains(user)).ToList();
         }
     }
 }

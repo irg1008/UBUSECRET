@@ -87,7 +87,7 @@ namespace www.auth
 
         private void CreateAccount()
         {
-            User newUser = new User(Email_Input.Text, Email_Input.Text, Password_Input.Text);
+            User newUser = new User(Name_Input.Text, Email_Input.Text, Password_Input.Text);
 
             // Request authorization.
             newUser.Request();

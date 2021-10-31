@@ -13,7 +13,7 @@ namespace www
         {
             // If logged in => Redirect to home.
             bool isLogged = Master.IsLogged();
-            if (isLogged) Response.Redirect("/default.aspx");
+            if (isLogged) Response.Redirect("Error.aspx");
         }
     }
 }
