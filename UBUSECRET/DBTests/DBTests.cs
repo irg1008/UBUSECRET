@@ -493,5 +493,18 @@ namespace Data.Tests
             var userSecrets = db.GetUserSecrets(user);
             Assert.IsTrue(userSecrets.Contains(secret));
         }
+
+        [TestMethod()]
+        public void GetRequestedUsersTest()
+        {
+            // Inser user on state = requested.
+            user.State = State.REQUESTED;
+            db.InsertUser(user);
+
+            // Check user is in requested users.
+            bool userInRequested = db.GetRequestedUsers().Contains(user);
+            Console.WriteLine(db.GetRequestedUsers().Count);
+            Assert.IsTrue(userInRequested);
+        }
     }
 }

@@ -68,9 +68,12 @@ namespace www.details
 
                     foreach (User consumer in secret.Consumers)
                     {
+                        void Reload(object sender, EventArgs e) { LoadData(user); };
                         ConsumerLabel control = (ConsumerLabel)Page.LoadControl("/controls/ConsumerLabel.ascx");
                         control.Consumer = consumer;
                         control.Secret = secret;
+                        control.ID = consumer.Id.ToString();
+                        control.OnRemove = new EventHandler(Reload);
                         ConsumerList.Controls.Add(control);
                     }
                 }
@@ -130,7 +133,7 @@ namespace www.details
             {
                 secret.AddConsumer(newConsumer);
                 Consumer_Input.Text = "";
-                Master.ShowPopUp($"Consumer with email {email} added successfully", PopUpType.SUCCESS);
+                Master.ShowPopUp($"{newConsumer.Name} added successfully", PopUpType.SUCCESS);
                 LoadData(Master.GetUser());
             }
         }

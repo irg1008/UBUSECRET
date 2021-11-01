@@ -8,7 +8,6 @@ using Data;
 using System.Threading;
 using System.Drawing;
 using Main;
-using Data;
 
 namespace www
 {

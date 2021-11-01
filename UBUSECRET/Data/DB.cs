@@ -50,9 +50,15 @@ namespace Data
                 guest.Activate();
                 guest.Unactivate();
 
-                // User that has to be authorized and set a new password.
+                // Users hat has to be authorized and set a new password.
                 User guest2 = new User("Guest 2", "guest_2@ubusecret.es", "P@ssword2");
                 guest2.Request();
+                // User that has to be authorized and set a new password.
+                User guest3 = new User("Guest 3", "guest_3@ubusecret.es", "P@ssword2");
+                guest3.Request();
+                // User that has to be authorized and set a new password.
+                User guest4 = new User("Guest 4", "guest_4@ubusecret.es", "P@ssword2");
+                guest4.Request();
 
                 // Sample secret of guest 1.
                 Secret gSecret = new Secret("Shared secret", "This is shared secret between users.", guest);
@@ -67,6 +73,8 @@ namespace Data
                 // Insert all sample data to DB.
                 db.InsertUser(guest);
                 db.InsertUser(guest2);
+                db.InsertUser(guest3);
+                db.InsertUser(guest4);
                 db.InsertSecret(gSecret);
                 db.InsertSecret(secretGuest2_1);
                 db.InsertSecret(secretGuest2_2);
@@ -279,6 +287,11 @@ namespace Data
         public List<Secret> GetInvitedSecrets(User user)
         {
             return SecretList().Where(secret => secret.Consumers.Contains(user)).ToList();
+        }
+
+        public List<User> GetRequestedUsers()
+        {
+            return UserList().Where(user => user.State == State.REQUESTED).ToList();
         }
     }
 }

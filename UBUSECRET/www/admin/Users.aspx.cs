@@ -23,28 +23,30 @@ namespace www.admin
             if (loggedUser == null || !loggedUser.IsAdmin)
                 Response.Redirect("Error.aspx");
 
-            // Load all users.
             LoadRequestedUsers();
         }
 
         private void LoadRequestedUsers()
         {
-            IList<User> users = db.UserList();
-
             // Get only requested users.
-            IEnumerable<User> requestedUsers = users.Where(user => user.State == State.REQUESTED);
+            List<User> requestedUsers = db.GetRequestedUsers();
 
             if (requestedUsers.Count() == 0)
             {
                 NoUsers.Visible = true;
                 UsersTable.Visible = false;
             }
-
-            // Show data for every user to be authorized.
-            foreach (User user in requestedUsers)
+            else
             {
-                TableRow newRow = NewTableRow(user);
-                UsersTable.Rows.Add(newRow);
+                // Clean table.
+                while (UsersTable.Rows.Count > 1) UsersTable.Rows.RemoveAt(1);
+
+                // Show data for every user to be authorized.
+                foreach (User user in requestedUsers)
+                {
+                    TableRow newRow = NewTableRow(user);
+                    UsersTable.Rows.Add(newRow);
+                }
             }
         }
 
@@ -77,7 +79,7 @@ namespace www.admin
             row.Cells.Add(cell);
 
             // Authorize button.
-            Button btn = new Button { Text = "Authorize" };
+            Button btn = new Button { Text = "Authorize", ID = user.Id.ToString() };
             void AuthorizeUser(Object sender, EventArgs e)
             {
                 user.Authorize();

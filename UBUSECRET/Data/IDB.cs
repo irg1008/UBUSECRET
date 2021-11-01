@@ -58,5 +58,6 @@ namespace Data
 
         List<Secret> GetUserSecrets(User user);
         List<Secret> GetInvitedSecrets(User user);
+        List<User> GetRequestedUsers();
     }
 }
