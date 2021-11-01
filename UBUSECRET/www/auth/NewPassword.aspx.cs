@@ -27,7 +27,7 @@ namespace www.auth
             bool isCorrectEmail = IsCorrectUserEmail(userEmail);
 
             if (!isCorrectEmail)
-                Response.Redirect("Error.aspx");
+                throw new HttpException(404, "");
         }
 
         private bool IsCorrectUserEmail(string email)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Invitation;
 using Main;
 
 namespace Data
@@ -14,6 +15,7 @@ namespace Data
         private int currentSecret = -1;
         private readonly SortedList<int, User> tblUsers = new SortedList<int, User>();
         private readonly SortedList<int, Secret> tblSecrets = new SortedList<int, Secret>();
+        private readonly SortedList<Guid, InvitationLink> tblInvitations = new SortedList<Guid, InvitationLink>();
 
         private DB()
         {
@@ -87,6 +89,7 @@ namespace Data
         public static void Reset()
         {
             _instance = null;
+
         }
 
         public bool ContainsSecret(Secret secret)
@@ -292,6 +295,52 @@ namespace Data
         public List<User> GetRequestedUsers()
         {
             return UserList().Where(user => user.State == State.REQUESTED).ToList();
+        }
+
+        public InvitationLink ReadInvitation(Guid id)
+        {
+            if (!ContainsInvitation(id)) return null;
+            return tblInvitations[id];
+        }
+
+        public InvitationLink ReadInvitation(InvitationLink link)
+        {
+            if (!ContainsInvitation(link)) return null;
+            return ReadInvitation(link.Id);
+        }
+
+        public bool DeleteInvitation(Guid id)
+        {
+            return tblInvitations.Remove(id);
+        }
+
+        public bool DeleteInvitation(InvitationLink link)
+        {
+            if (!ContainsInvitation(link)) return false;
+            return DeleteInvitation(link.Id);
+        }
+
+        public bool InsertInvitation(InvitationLink link)
+        {
+            if (ContainsInvitation(link) || link is null) return false;
+            tblInvitations.Add(link.Id, link);
+            return true;
+        }
+
+        public bool ContainsInvitation(Guid id)
+        {
+            return tblInvitations.ContainsKey(id);
+        }
+
+        public bool ContainsInvitation(InvitationLink link)
+        {
+            if (link is null) return false;
+            return ContainsInvitation(link.Id);
+        }
+
+        public int InvitationCount()
+        {
+            return tblInvitations.Count;
         }
     }
 }

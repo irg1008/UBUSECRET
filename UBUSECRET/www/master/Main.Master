@@ -29,8 +29,23 @@
 </head>
 <body>
     <form runat="server" class="w-full h-full" autocomplete="on" novalidate="novalidate">
+        <asp:Panel ID="BG_Decoration" runat="server">
+            <section class="absolute top-0 left-0 bg h-full overflow-hidden w-full filter blur-md flex flex-col justify-between items-center pointer-events-none">
+                <p class="bg-text opacity-20 text-gray-600 font-bold">UBUSECRET</p>
+                <div class="flex justify-center items-end">
+                    <asp:Image ID="lock" ImageUrl="~/static/lock.png" AlternateText="lock" runat="server" />
+                    <asp:Image ID="shield" ImageUrl="~/static/shield.png" AlternateText="shield" runat="server" />
+                </div>
+            </section>
+        </asp:Panel>
+
+        <section class="w-full flex justify-center items-center flex-col py-28 px-10">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </section>
+
         <asp:Panel ID="Navbar" runat="server" Visible="false">
-            <navbar class="w-full h-20 bg-gray-200 flex gap-4 justify-between items-center px-6 drop-shadow-lg">
+            <navbar class="fixed w-full top-0 left-0 h-20 bg-gray-200 flex gap-4 justify-between items-center px-6 drop-shadow-lg">
                 <asp:HyperLink runat="server" NavigateUrl="~/default.aspx" CssClass="flex gap-6 justify-center items-center">
                     <h2 class="blue">ubusecret</h2>
                 </asp:HyperLink>
@@ -54,22 +69,7 @@
             </navbar>
         </asp:Panel>
 
-        <asp:Panel ID="BG_Decoration" runat="server">
-            <section class="absolute top-0 left-0 bg h-full overflow-hidden w-full filter blur-md flex flex-col justify-between items-center pointer-events-none">
-                <p class="bg-text opacity-20 text-gray-600 font-bold">UBUSECRET</p>
-                <div class="flex justify-center items-end">
-                    <asp:Image ID="lock" ImageUrl="~/static/lock.png" AlternateText="lock" runat="server" />
-                    <asp:Image ID="shield" ImageUrl="~/static/shield.png" AlternateText="shield" runat="server" />
-                </div>
-            </section>
-        </asp:Panel>
-
-        <section class="w-full flex justify-center items-center flex-col py-28 px-10">
-            <asp:ContentPlaceHolder ID="body" runat="server">
-            </asp:ContentPlaceHolder>
-        </section>
-
-        <asp:Panel ID="PopUp" runat="server" Visible="false" CssClass="pop-up fixed flex justify-center items-center bottom-0 right-0 m-10 bg-gray-100 shadow-md rounded-xl p-6">
+        <asp:Panel ID="PopUp" runat="server" Visible="false" CssClass="fixed flex justify-center items-center bottom-0 right-0 m-10 bg-gray-100 shadow-md rounded-xl p-6">
             <asp:Label runat="server" ID="PopUp_Text"></asp:Label>
         </asp:Panel>
 

@@ -28,3 +28,7 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\obj\Debug\netstandard2.0\Data.csproj.CopyComplete
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\bin\Debug\netstandard2.0\Invitation.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\bin\Debug\netstandard2.0\Invitation.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\bin\Debug\netstandard2.0\Invitation.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\Data\bin\Debug\netstandard2.0\Invitation.pdb

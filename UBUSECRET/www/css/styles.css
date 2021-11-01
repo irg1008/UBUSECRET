@@ -52,6 +52,10 @@ button, input[type="button"], input[type="submit"] {
         max-height: 25px;
     }
 
+.reset-button {
+    transform: none !important;
+}
+
 .admin:active {
     border-bottom: 0px !important;
     transform: initial;

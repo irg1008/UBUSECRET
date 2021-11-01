@@ -77,6 +77,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -101,40 +102,7 @@
     <Content Include="default.aspx" />
     <Content Include="details\Secret.aspx" />
     <Content Include="Error.aspx" />
-    <Content Include="lib\font-awesome\css\all.css" />
-    <Content Include="lib\font-awesome\css\all.min.css" />
-    <Content Include="lib\font-awesome\css\brands.css" />
-    <Content Include="lib\font-awesome\css\brands.min.css" />
-    <Content Include="lib\font-awesome\css\fontawesome.css" />
-    <Content Include="lib\font-awesome\css\fontawesome.min.css" />
-    <Content Include="lib\font-awesome\css\regular.css" />
-    <Content Include="lib\font-awesome\css\regular.min.css" />
-    <Content Include="lib\font-awesome\css\solid.css" />
-    <Content Include="lib\font-awesome\css\solid.min.css" />
-    <Content Include="lib\font-awesome\css\svg-with-js.css" />
-    <Content Include="lib\font-awesome\css\svg-with-js.min.css" />
-    <Content Include="lib\font-awesome\css\v4-shims.css" />
-    <Content Include="lib\font-awesome\css\v4-shims.min.css" />
-    <Content Include="lib\font-awesome\js\all.js" />
-    <Content Include="lib\font-awesome\js\all.min.js" />
-    <Content Include="lib\font-awesome\js\brands.js" />
-    <Content Include="lib\font-awesome\js\brands.min.js" />
-    <Content Include="lib\font-awesome\js\conflict-detection.js" />
-    <Content Include="lib\font-awesome\js\conflict-detection.min.js" />
-    <Content Include="lib\font-awesome\js\fontawesome.js" />
-    <Content Include="lib\font-awesome\js\fontawesome.min.js" />
-    <Content Include="lib\font-awesome\js\regular.js" />
-    <Content Include="lib\font-awesome\js\regular.min.js" />
-    <Content Include="lib\font-awesome\js\solid.js" />
-    <Content Include="lib\font-awesome\js\solid.min.js" />
-    <Content Include="lib\font-awesome\js\v4-shims.js" />
-    <Content Include="lib\font-awesome\js\v4-shims.min.js" />
-    <Content Include="lib\font-awesome\sprites\brands.svg" />
-    <Content Include="lib\font-awesome\sprites\regular.svg" />
-    <Content Include="lib\font-awesome\sprites\solid.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="invitation\Link.aspx" />
     <Content Include="static\arrow.png" />
     <Content Include="static\lock.png" />
     <Content Include="static\logo.png" />
@@ -215,6 +183,13 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="invitation\Link.aspx.cs">
+      <DependentUpon>Link.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invitation\Link.aspx.designer.cs">
+      <DependentUpon>Link.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\Nested_Form.master.cs">
       <DependentUpon>Nested_Form.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,18 +216,6 @@
   <ItemGroup>
     <Content Include="libman.json" />
     <Content Include="master\Nested_Form.master" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
     <Content Include="master\Main.Master" />
     <None Include="Web.Debug.config">
@@ -269,6 +232,10 @@
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{814bbd92-5830-4e4f-a93b-f5ebb558118d}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Invitation\Invitation.csproj">
+      <Project>{4f65e1ee-0da0-4190-a204-b9fe1c83cfd2}</Project>
+      <Name>Invitation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Main\Main.csproj">
       <Project>{af4654de-370e-4d63-bbcc-5cd13e23a437}</Project>

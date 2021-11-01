@@ -1088,10 +1088,20 @@
       },
       "Data/1.0.0": {
         "dependencies": {
+          "Invitation": "1.0.0",
           "Main": "1.0.0"
         },
         "runtime": {
           "Data.dll": {}
+        }
+      },
+      "Invitation/1.0.0": {
+        "dependencies": {
+          "Main": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.1.1"
+        },
+        "runtime": {
+          "Invitation.dll": {}
         }
       },
       "Main/1.0.0": {
@@ -1743,6 +1753,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Invitation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

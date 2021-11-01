@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Main;
+using Invitation;
 using System.Threading;
 
 namespace Data.Tests
@@ -15,6 +16,7 @@ namespace Data.Tests
         private DB db;
         private User user;
         private Secret secret;
+        private InvitationLink link;
         private static readonly string adminEmail = "admin@ubusecret.es";
 
         [TestInitialize()]
@@ -23,6 +25,7 @@ namespace Data.Tests
             db = DB.GetInstance();
             user = new User("User", "user@ubusecret.com", "P@ssw0rd");
             secret = new Secret("Secret", "Hidden Message", user);
+            link = new InvitationLink(secret, DateTime.Now.AddDays(1));
         }
 
         [TestCleanup]
@@ -30,8 +33,54 @@ namespace Data.Tests
         {
             user = null;
             secret = null;
+            link = null;
             db = null;
             DB.Reset();
+        }
+
+        [TestMethod()]
+        public void GetInstanceTest()
+        {
+            Assert.IsNotNull(DB.GetInstance());
+            Assert.IsInstanceOfType(DB.GetInstance(), typeof(DB));
+        }
+
+        [TestMethod()]
+        public void LoadSampleDataTest()
+        {
+            int userCount = db.UserCount();
+            int secretCount = db.SecretCount();
+            Assert.AreEqual(userCount, 1);
+            Assert.AreEqual(secretCount, 0);
+
+            DB.LoadSampleData();
+
+            userCount = db.UserCount();
+            secretCount = db.SecretCount();
+            Assert.AreEqual(userCount, 5);
+            Assert.AreEqual(secretCount, 3);
+        }
+
+        [TestMethod()]
+        public void ResetTest()
+        {
+            // We check our db object is not null.
+            Assert.IsNotNull(db);
+
+            // We insert data to be "removed" on reset.
+            User user = new User("Short Lived User", "slu@ubusecret.es", "P@ssword2");
+            db.InsertUser(user);
+
+            // Check correctly inserted.
+            bool containsUser = db.ContainsUser(user);
+            Assert.IsTrue(containsUser);
+
+            DB.Reset();
+            db = DB.GetInstance();
+
+            // Check data does not exist anymore.
+            containsUser = db.ContainsUser(user);
+            Assert.IsFalse(containsUser);
         }
 
         [TestMethod()]
@@ -505,6 +554,121 @@ namespace Data.Tests
             bool userInRequested = db.GetRequestedUsers().Contains(user);
             Console.WriteLine(db.GetRequestedUsers().Count);
             Assert.IsTrue(userInRequested);
+        }
+
+        [TestMethod()]
+        public void ReadInvitationTest()
+        {
+            // Insert invitation.
+            db.InsertInvitation(link);
+
+            // Read invitation.
+            InvitationLink l = db.ReadInvitation(link);
+            Assert.AreEqual(link, l);
+
+            // Read null invitation.
+            l = db.ReadInvitation(null);
+            Assert.IsNull(l);
+        }
+
+        [TestMethod()]
+        public void ReadInvitationTest1()
+        {
+            // Insert invitation.
+            db.InsertInvitation(link);
+
+            // Read invitation.
+            InvitationLink l = db.ReadInvitation(link.Id);
+            Assert.AreEqual(link, l);
+        }
+
+        [TestMethod()]
+        public void DeleteInvitationTest()
+        {
+            bool containsInv = db.ContainsInvitation(link);
+            Assert.IsFalse(containsInv);
+
+            // Cannot delete if not inserted.
+            bool deleted = db.DeleteInvitation(link);
+            Assert.IsFalse(deleted);
+
+            // Inserting secret.
+            db.InsertInvitation(link);
+
+            // Delete.
+            deleted = db.DeleteInvitation(link);
+            Assert.IsTrue(deleted);
+        }
+
+        [TestMethod()]
+        public void DeleteInvitationTest1()
+        {
+            bool containsInv = db.ContainsInvitation(link);
+            Assert.IsFalse(containsInv);
+
+            // Cannot delete if not inserted.
+            bool deleted = db.DeleteInvitation(link);
+            Assert.IsFalse(deleted);
+
+            // Inserting secret.
+            db.InsertInvitation(link);
+
+            // Delete.
+            deleted = db.DeleteInvitation(link.Id);
+            Assert.IsTrue(deleted);
+        }
+
+        [TestMethod()]
+        public void InsertInvitationTest()
+        {
+            // Insert invitation.
+            bool inserted = db.InsertInvitation(link);
+            Assert.IsTrue(inserted);
+
+            // Insert again.
+            inserted = db.InsertInvitation(link);
+            Assert.IsFalse(inserted);
+
+            // Insert null.
+            inserted = db.InsertInvitation(null);
+            Assert.IsFalse(inserted);
+        }
+
+        [TestMethod()]
+        public void ContainsInvitationTest()
+        {
+            bool containsInv = db.ContainsInvitation(link);
+            Assert.IsFalse(containsInv);
+
+            // Inserting secret.
+            db.InsertInvitation(link);
+            containsInv = db.ContainsInvitation(link);
+            Assert.IsTrue(containsInv);
+        }
+
+        [TestMethod()]
+        public void ContainsInvitationTest1()
+        {
+            bool containsInv = db.ContainsInvitation(link);
+            Assert.IsFalse(containsInv);
+
+            // Inserting secret.
+            db.InsertInvitation(link);
+            containsInv = db.ContainsInvitation(link.Id);
+            Assert.IsTrue(containsInv);
+        }
+
+        [TestMethod()]
+        public void InvitationCountTest()
+        {
+            // Initial count should be 0.
+            int count = db.InvitationCount();
+            Assert.AreEqual(count, 0);
+
+            // Insert invitation.
+            db.InsertInvitation(link);
+            count = db.InvitationCount();
+            Assert.AreEqual(count, 1);
         }
     }
 }

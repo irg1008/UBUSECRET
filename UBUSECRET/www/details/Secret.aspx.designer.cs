@@ -105,6 +105,60 @@ namespace www.details
         protected global::System.Web.UI.HtmlControls.HtmlButton DetachButton;
 
         /// <summary>
+        /// Control InvitationPopUp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel InvitationPopUp;
+
+        /// <summary>
+        /// Control Form.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Form;
+
+        /// <summary>
+        /// Control ExpiryTime_Input.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ExpiryTime_Input;
+
+        /// <summary>
+        /// Control ExpiryTime_Error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ExpiryTime_Error;
+
+        /// <summary>
+        /// Control LinkContainer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LinkContainer;
+
+        /// <summary>
+        /// Control InvitationLink.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InvitationLink;
+
+        /// <summary>
         /// Propiedad Master.
         /// </summary>
         /// <remarks>

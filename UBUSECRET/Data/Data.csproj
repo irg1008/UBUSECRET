@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Invitation\Invitation.csproj" />
     <ProjectReference Include="..\Main\Main.csproj" />
   </ItemGroup>
 

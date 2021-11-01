@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Data;
 using Main;
 using www.controls;
+using Invitation;
+using System.Windows.Forms;
+using System.Threading;
 
 namespace www.details
 {
@@ -21,7 +21,7 @@ namespace www.details
             bool isLogged = Master.IsLogged();
 
             if (!isLogged)
-                Response.Redirect("Error.aspx");
+                throw new HttpException(404, "");
 
             // If logged.
             db = DB.GetInstance();
@@ -42,7 +42,7 @@ namespace www.details
             }
             catch (Exception)
             {
-                Response.Redirect("Error.aspx");
+                throw new HttpException(404, "");
             }
         }
 
@@ -136,6 +136,57 @@ namespace www.details
                 Master.ShowPopUp($"{newConsumer.Name} added successfully", PopUpType.SUCCESS);
                 LoadData(Master.GetUser());
             }
+        }
+
+        protected void OpenPopUp(object sender, EventArgs e)
+        {
+            InvitationPopUp.Visible = true;
+
+            DateTime now = DateTime.Now;
+
+            // Min time = now.
+            // Selected time = now + 1 day(s).
+            ExpiryTime_Input.Attributes["min"] = now.ToString("s");
+            ExpiryTime_Input.Value = now.AddDays(1).ToString("s");
+        }
+
+        protected void ClosePopUp(object sender, EventArgs e)
+        {
+            InvitationPopUp.Visible = false;
+        }
+
+        private bool CheckCorrectDate(DateTime date)
+        {
+            // Check input data is correct.
+            bool correctDate = date > DateTime.Now;
+
+            if (!correctDate)
+                ExpiryTime_Error.Text = "You cannot choose a expiry time on the past";
+
+            return correctDate;
+        }
+
+        protected void CreateLink(object sender, EventArgs e)
+        {
+            DateTime selected = DateTime.Parse(ExpiryTime_Input.Value);
+            bool correctDate = CheckCorrectDate(selected);
+
+            if (correctDate)
+            {
+                // Create invitation.
+                InvitationLink link = new InvitationLink(secret, selected);
+                db.InsertInvitation(link);
+                string url = $"https://{Request.Url.Authority}/invitation/Link.aspx?id={link.Id}";
+
+                Form.Visible = false;
+                LinkContainer.Visible = true;
+                InvitationLink.Text = url;
+            }
+        }
+
+        protected void CopyToClipboard(object sender, EventArgs e)
+        {
+            Master.ShowPopUp("Link copied to clipboard", PopUpType.INFO);
         }
     }
 }

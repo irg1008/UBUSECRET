@@ -21,7 +21,7 @@ namespace www.admin
             User loggedUser = Master.GetUser();
 
             if (loggedUser == null || !loggedUser.IsAdmin)
-                Response.Redirect("Error.aspx");
+                throw new HttpException(404, "");
 
             LoadRequestedUsers();
         }

@@ -11,7 +11,15 @@ namespace www
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string error = "Not found";
 
+            string errorPath = Request.QueryString["aspxerrorpath"];
+
+            if (errorPath != null)
+                error += $": {errorPath}";
+
+            Page.Title = error;
+            Path.Text = error;
         }
     }
 }

@@ -208,3 +208,7 @@ C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBU
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\obj\Debug\netcoreapp3.1\DataTests.dll
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\obj\Debug\netcoreapp3.1\DataTests.pdb
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\obj\Debug\netcoreapp3.1\DataTests.genruntimeconfig.cache
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\bin\Debug\netcoreapp3.1\Invitation.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\bin\Debug\netcoreapp3.1\Invitation.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\bin\Debug\netcoreapp3.1\Invitation.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\DBTests\bin\Debug\netcoreapp3.1\Invitation.pdb

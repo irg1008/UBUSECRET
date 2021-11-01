@@ -1,9 +1,7 @@
 ﻿using Main;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Invitation;
 
 namespace Data
 {
@@ -32,6 +30,8 @@ namespace Data
 
         User NextUser();
         User PreviousUser();
+
+        List<User> GetRequestedUsers();
         // ----------
 
 
@@ -54,10 +54,30 @@ namespace Data
 
         Secret NextSecret();
         Secret PreviousSecret();
-        // ----------
 
         List<Secret> GetUserSecrets(User user);
         List<Secret> GetInvitedSecrets(User user);
-        List<User> GetRequestedUsers();
+        // ----------
+
+
+        // INVITATION.
+        // ----------
+        InvitationLink ReadInvitation(Guid id);
+        InvitationLink ReadInvitation(InvitationLink link);
+
+        bool DeleteInvitation(Guid id);
+        bool DeleteInvitation(InvitationLink link);
+
+        // No update.
+
+        bool InsertInvitation(InvitationLink link);
+
+        bool ContainsInvitation(Guid id);
+        bool ContainsInvitation(InvitationLink link);
+
+        int InvitationCount();
+
+        // No next or previous.
+        // ----------
     }
 }

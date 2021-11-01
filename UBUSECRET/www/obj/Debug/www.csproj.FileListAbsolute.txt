@@ -170,3 +170,7 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Invitation.dll
+C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Invitation.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Invitation.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Invitation.pdb

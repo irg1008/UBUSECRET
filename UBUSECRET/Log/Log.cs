@@ -14,7 +14,7 @@ namespace Log
 
         internal List<LogEntry> LogEntries { get => logEntries; set => logEntries = value; }
 
-        public void addEntry(LogEntry newEntry)
+        public void AddEntry(LogEntry newEntry)
         {
             LogEntries.Add(newEntry);
         }
