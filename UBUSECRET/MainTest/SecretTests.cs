@@ -92,9 +92,15 @@ namespace Main.Tests
         {
             string secretText = "This is a secret tsst 🤫";
             Secret secret = new Secret("Secret", secretText, owner);
-            string decryptedText = secret.GetMesssage();
 
-            Assert.AreEqual(secretText, decryptedText);
+            Assert.AreEqual(secretText, secret.GetMesssage());
+
+            // Testing longer string.
+            secretText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            secret = new Secret("Secret", secretText, owner);
+
+            Assert.AreEqual(secretText, secret.GetMesssage());
+
         }
 
         [TestMethod()]
@@ -136,6 +142,14 @@ namespace Main.Tests
             second.Title = "a";
             bool aSameB = first.CompareTo(second) == 0;
             Assert.IsTrue(aSameB);
+        }
+
+        [TestMethod()]
+        public void HasAccessTest()
+        {
+            User consumer = new User("Consumer", "consumer@ubusecret.es", "P@ssword2");
+            s_a.AddConsumer(consumer);
+            Assert.IsTrue(s_a.HasAccess(consumer));
         }
     }
 }

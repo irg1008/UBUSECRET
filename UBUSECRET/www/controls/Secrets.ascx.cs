@@ -36,6 +36,7 @@ namespace www.controls
             {
                 SecretControl control = (SecretControl)Page.LoadControl("/controls/Secret.ascx");
                 control.Secret = secret;
+                control.ID = secret.Id.ToString();
 
                 if (useSharedBy)
                     control.SharedBy = secret.Owner;

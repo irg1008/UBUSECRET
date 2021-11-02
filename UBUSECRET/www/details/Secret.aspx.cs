@@ -102,7 +102,7 @@ namespace www.details
 
             // Check secret as user as owner or consumer.
             isOwner = secret.Owner.Equals(user);
-            bool isConsumer = secret.Consumers.Contains(user);
+            bool isConsumer = secret.HasAccess(user);
 
             if (!isOwner && !isConsumer) return null;
 
@@ -112,7 +112,7 @@ namespace www.details
         private string SetEmailError(User user)
         {
             if (user == null) return "No user with given email";
-            if (secret.Consumers.Contains(user)) return "User already added as a consumer";
+            if (secret.HasAccess(user)) return "User already added as a consumer";
             if (user == secret.Owner) return "You cannot invite yourself to your own secret";
             return "";
         }

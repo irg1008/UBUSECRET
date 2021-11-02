@@ -6,12 +6,11 @@ namespace Main
 {
     public class Secret : IComparable<Secret>
     {
-        private readonly RSAEncryption RSA = new RSAEncryption();
         private readonly IdGen idGen = new IdGen();
 
         private readonly int id;
         private string title;
-        private byte[] message;
+        private readonly string message;
         private User owner;
         private List<User> consumers;
 
@@ -20,17 +19,17 @@ namespace Main
         {
             id = idGen.NewId();
             Title = title;
-            Message = RSA.EncryptText(message);
             Owner = owner;
             Consumers = new List<User> { };
+            this.message = message;
         }
 
         /* GETTERS AND SETTERS */
         public int Id => id;
         public string Title { get => title; set => title = value; }
-        public byte[] Message { get => message; set => message = value; }
         public User Owner { get => owner; set => owner = value; }
         public List<User> Consumers { get => consumers; set => consumers = value; }
+        public string Message { get => message; }
 
         public bool IsOwner(User user)
         {
@@ -42,7 +41,7 @@ namespace Main
             return Consumers.Count;
         }
 
-        private bool HasAccess(User user)
+        public bool HasAccess(User user)
         {
             return Consumers.Contains(user);
         }
@@ -68,8 +67,11 @@ namespace Main
             return Consumers.Remove(user);
         }
 
-        public String GetMesssage() {
-            return RSA.DecryptText(Message);
+        // This method exist so encryption can be easily added later.
+        // And complexity can grow without changing any function call.
+        public String GetMesssage()
+        {
+            return message;
         }
 
         public override bool Equals(object obj)

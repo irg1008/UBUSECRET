@@ -51,7 +51,7 @@ namespace www.invitation
             else
             {
                 // Check if user already consumes the secret.
-                bool userAlreadyconsumes = link.Secret.Consumers.Contains(loggedUser);
+                bool userAlreadyconsumes = link.Secret.HasAccess(loggedUser);
                 if (userAlreadyconsumes)
                 {
                     AlreadyHasAccess_Panel.Visible = true;

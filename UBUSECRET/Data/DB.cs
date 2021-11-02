@@ -289,7 +289,7 @@ namespace Data
 
         public List<Secret> GetInvitedSecrets(User user)
         {
-            return SecretList().Where(secret => secret.Consumers.Contains(user)).ToList();
+            return SecretList().Where(secret => secret.HasAccess(user)).ToList();
         }
 
         public List<User> GetRequestedUsers()

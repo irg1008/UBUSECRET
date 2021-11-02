@@ -67,7 +67,7 @@
                 <input runat="server" autofocus="autofocus" id="ExpiryTime_Input" type="datetime-local" />
                     <asp:Label CssClass="error" ID="ExpiryTime_Error" runat="server" />
                 </label>
-                <button runat="server" onserverclick="CreateLink" type="submit" class="bg-white text-black font-semibold mt-4">
+                <button runat="server" onserverclick="CreateLink" class="bg-white text-black font-semibold mt-4">
                     Create link
                 </button>
             </asp:Panel>

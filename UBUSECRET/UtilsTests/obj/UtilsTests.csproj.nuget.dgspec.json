@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj": {}
+    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj": {
+    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj",
         "projectName": "UtilsTests",
-        "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj",
-        "packagesPath": "C:\\Users\\Iván\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\obj\\",
+        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\UtilsTests.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\UtilsTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Iván\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
-                "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj"
+              "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj"
               }
             }
           }
@@ -84,20 +85,20 @@
         }
       }
     },
-    "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
+    "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Iván\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\obj\\",
+        "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Iván\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -106,7 +107,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
         },
         "frameworks": {
           "netstandard2.0": {

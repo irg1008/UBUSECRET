@@ -7,8 +7,8 @@
         <h1>ADD SECRET</h1>
         <div class="w-full max-w-4xl mt-4 flex flex-col gap-4">
             <label class="text-white">
-                Title
-                <asp:TextBox runat="server" autofocus="autofocus" ID="SecretTitle" placeholder="A very interesting title"></asp:TextBox>
+                Title (Max 25)
+                <asp:TextBox runat="server" autofocus="autofocus" ID="SecretTitle" placeholder="A very interesting title" MaxLength="25"></asp:TextBox>
                 <asp:Label CssClass="error" ID="SecretTitleError" runat="server" Text="" />
             </label>
 
