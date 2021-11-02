@@ -27,6 +27,7 @@ namespace www.add
 
             if (isTitleEmpty) SecretTitleError.Text = "Title cannot be empty";
             if (isMsgEmpty) SecretMessageError.Text = "Message cannot be empty";
+            if (SecretMessage.Text.Length > 250) SecretMessageError.Text = "Message length cannot exceed 250 characters";
 
             return false;
         }

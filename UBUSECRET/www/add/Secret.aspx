@@ -13,8 +13,8 @@
             </label>
 
             <label class="text-white">
-                Message
-                <asp:TextBox CssClass="w-full max-h-60" Rows="6" runat="server" TextMode="Multiline" ID="SecretMessage" placeholder="Here you should put something no one should know"></asp:TextBox>
+                Message (Max 250)
+                <asp:TextBox CssClass="w-full max-h-60" Rows="6" runat="server" TextMode="Multiline" ID="SecretMessage" placeholder="Here you should put something no one should know" MaxLength="250"></asp:TextBox>
                 <asp:Label CssClass="error" ID="SecretMessageError" runat="server" Text="" />
             </label>
 
