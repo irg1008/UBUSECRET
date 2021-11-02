@@ -78,7 +78,6 @@ namespace www
                     // Set new password to user.
                     Response.Redirect($"/auth/NewPassword.aspx?email={userToLogIn.Email}");
                     break;
-
             }
         }
 

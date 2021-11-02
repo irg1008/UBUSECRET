@@ -61,6 +61,7 @@ namespace www
         public void LogOut()
         {
             Page.Session["is-logged"] = false;
+            Page.Session["user"] = null;
             User user = GetUser();
             if (user != null)
             {

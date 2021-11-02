@@ -15,37 +15,72 @@ namespace www.invitation
             bool isLogged = Master.IsLogged();
 
             if (!isLogged)
-                IncorrectInvitation();
+            {
+                ShowYouNeedToBeLogged();
+            }
+            else
+            {
+                db = DB.GetInstance();
 
-
-            db = DB.GetInstance();
-
-            // Check invitation with id exist and is accessible.
-            Guid id = new Guid(Request.QueryString["id"]);
-            CheckValidId(id);
+                // Check invitation with id exist and is accessible.
+                Guid id = new Guid(Request.QueryString["id"]);
+                CheckValidId(id);
+            }
         }
 
+        protected void LogInAndRedirect(object sender, EventArgs e)
+        {
+            Response.Redirect("/auth/LogIn.aspx");
+        }
+
+        // Mad function.
+        // TOREFACTOR.
         private void CheckValidId(Guid id)
         {
             InvitationLink link = db.ReadInvitation(id);
             if (link == null)
                 IncorrectInvitation();
 
-
-            // If exists => We check is accessible.
-            // It's accessible if current date (Datetime.Now) is before the limit time.
-            bool isAccessible = link.IsAccessible();
-
-            if (isAccessible)
-                ShowValidLinkControls(link);
+            // Check if invitation is accessed by owner.
+            User loggedUser = Master.GetUser();
+            bool userIsOwner = loggedUser == link.Secret.Owner;
+            if (userIsOwner)
+            {
+                ShowUserIsOwner();
+            }
             else
-                ShowInaccessible(link);
+            {
+                // Check if user already consumes the secret.
+                bool userAlreadyconsumes = link.Secret.Consumers.Contains(loggedUser);
+                if (userAlreadyconsumes)
+                {
+                    AlreadyHasAccess_Panel.Visible = true;
+                }
+                else
+                {
+                    // It's accessible if current date (Datetime.Now) is before the limit time.
+                    bool isAccessible = link.IsAccessible();
+
+                    if (isAccessible)
+                    {
+                        ShowValidLinkControls(link);
+                    }
+                    else
+                    {
+                        ShowInaccessible(link);
+                    }
+                }
+            }
+        }
+
+        private void ShowUserIsOwner()
+        {
+            IsOwner_Panel.Visible = true;
         }
 
         private void ShowYouNeedToBeLogged()
         {
-            // TODO everything here.
-            // And then a list in every secret.
+            NotLogged_Panel.Visible = true;
         }
 
         private void ShowInaccessible(InvitationLink link)
@@ -60,10 +95,11 @@ namespace www.invitation
             {
                 User loggedUser = Master.GetUser();
                 link.Secret.AddConsumer(loggedUser);
+                Response.Redirect("/default.aspx");
             }
 
             ValidInvitation.Visible = true;
-            SecretTitle.Text = link.Secret.Title;
+            ValidInvitationText.Text = $"Do you wanto to add the secret \"{link.Secret.Title}\" (by {link.Secret.Owner.Name}) to your library?";
             AcceptButton.ServerClick += new EventHandler(AddSecretToUser);
         }
 

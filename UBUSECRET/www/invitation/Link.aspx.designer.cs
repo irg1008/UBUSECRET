@@ -42,13 +42,13 @@ namespace www.invitation
         protected global::System.Web.UI.WebControls.Panel ValidInvitation;
 
         /// <summary>
-        /// Control SecretTitle.
+        /// Control ValidInvitationText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SecretTitle;
+        protected global::System.Web.UI.WebControls.Label ValidInvitationText;
 
         /// <summary>
         /// Control AcceptButton.
@@ -58,6 +58,33 @@ namespace www.invitation
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton AcceptButton;
+
+        /// <summary>
+        /// Control IsOwner_Panel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel IsOwner_Panel;
+
+        /// <summary>
+        /// Control NotLogged_Panel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel NotLogged_Panel;
+
+        /// <summary>
+        /// Control AlreadyHasAccess_Panel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AlreadyHasAccess_Panel;
 
         /// <summary>
         /// Propiedad Master.
