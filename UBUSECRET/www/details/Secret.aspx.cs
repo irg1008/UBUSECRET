@@ -87,6 +87,7 @@ namespace www.details
             {
                 void DetachFromSecret(object sender, EventArgs e)
                 {
+                    AppLogs.DetatchFromSecret(user, secret);
                     secret.RemoveConsumer(user);
                     Response.Redirect("/default.aspx");
                 }
@@ -120,6 +121,7 @@ namespace www.details
         protected void RemoveSecret(object sender, EventArgs e)
         {
             db.DeleteSecret(secret);
+            AppLogs.DeleteSecret(secret);
             Response.Redirect("/default.aspx");
         }
 
@@ -133,6 +135,7 @@ namespace www.details
             {
                 secret.AddConsumer(newConsumer);
                 Consumer_Input.Text = "";
+                AppLogs.AddConsumer(newConsumer, secret);
                 Master.ShowPopUp($"{newConsumer.Name} added successfully", PopUpType.SUCCESS);
                 LoadData(Master.GetUser());
             }
@@ -176,17 +179,13 @@ namespace www.details
                 // Create invitation.
                 InvitationLink link = new InvitationLink(secret, selected);
                 db.InsertInvitation(link);
+                AppLogs.CreateInvitation(link, secret);
                 string url = $"https://{Request.Url.Authority}/invitation/Link.aspx?id={link.Id}";
 
                 Form.Visible = false;
                 LinkContainer.Visible = true;
                 InvitationLink.Text = url;
             }
-        }
-
-        protected void CopyToClipboard(object sender, EventArgs e)
-        {
-            Master.ShowPopUp("Link copied to clipboard", PopUpType.INFO);
         }
     }
 }

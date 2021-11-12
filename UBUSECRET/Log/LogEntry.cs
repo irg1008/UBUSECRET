@@ -17,27 +17,43 @@ namespace Log
         CREATE_INVITATION
     }
 
-    class LogEntry
-    {
-        private readonly Guid id;
-        private Entry entry;
-        private DateTime date;
-        private User actor;
-        private User affected;
 
-        public LogEntry(Entry entry, User actor, User affected)
+    public class LogEntry
+    {
+        private static Dictionary<Entry, string> enumValues = new Dictionary<Entry, string>() {
+            { Log.Entry.LOG_IN, "Log In" },
+            { Log.Entry.LOG_OUT, "Log Out" },
+            { Log.Entry.ADD_CONSMER, "New consumer" },
+            { Log.Entry.DETACH_CONSUMER, "Owner detatched consumer" },
+            { Log.Entry.DETACH_FROM_SECRET, "Consumer detatched itself from secret" },
+            { Log.Entry.CREATE_SECRET, "New secret" },
+            { Log.Entry.DELETE_SECRET, "Secret deleted" },
+            { Log.Entry.CREATE_INVITATION, "New invitation" }
+        };
+
+        private readonly Guid id;
+        private string entry;
+        private DateTime date;
+        private string message;
+
+        public LogEntry(Entry entry, string message)
         {
+            // Create static dictionary.
+
             this.id = Guid.NewGuid();
-            Entry = entry;
+            Entry = Parse(entry);
             Date = DateTime.Now;
-            Actor = actor;
-            Affected = affected;
+            Message = message == "" ? "No further message provided" : message;
+        }
+
+        private string Parse(Entry entry)
+        {
+            return enumValues[entry];
         }
 
         public Guid Id => id;
-        public Entry Entry { get => entry; set => entry = value; }
+        public string Entry { get => entry; set => entry = value; }
         public DateTime Date { get => date; set => date = value; }
-        public User Actor { get => actor; set => actor = value; }
-        public User Affected { get => affected; set => affected = value; }
+        public string Message { get => message; set => message = value; }
     }
 }

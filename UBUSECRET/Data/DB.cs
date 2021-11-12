@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Invitation;
+using Log;
 using Main;
 
 namespace Data
@@ -16,6 +17,7 @@ namespace Data
         private readonly SortedList<int, User> tblUsers = new SortedList<int, User>();
         private readonly SortedList<int, Secret> tblSecrets = new SortedList<int, Secret>();
         private readonly SortedList<Guid, InvitationLink> tblInvitations = new SortedList<Guid, InvitationLink>();
+        private readonly SortedList<Guid, LogEntry> tblLogs = new SortedList<Guid, LogEntry>();
 
         private DB()
         {
@@ -341,6 +343,34 @@ namespace Data
         public int InvitationCount()
         {
             return tblInvitations.Count;
+        }
+
+        public List<LogEntry> LogList()
+        {
+            return tblLogs.Values.ToList();
+        }
+
+        public bool InsertLog(LogEntry entry)
+        {
+            if (ContainsLog(entry) || entry is null) return false;
+            tblLogs.Add(entry.Id, entry);
+            return true;
+        }
+
+        public int LogCount()
+        {
+            return tblLogs.Count;
+        }
+
+        public bool ContainsLog(Guid id)
+        {
+            return tblLogs.ContainsKey(id);
+        }
+
+        public bool ContainsLog(LogEntry entry)
+        {
+            if (entry == null) return false;
+            return ContainsLog(entry.Id);
         }
     }
 }

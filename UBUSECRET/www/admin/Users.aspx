@@ -19,5 +19,16 @@
             </asp:TableHeaderRow>
         </asp:Table>
         <asp:Label CssClass="text-white mt-4" runat="server" ID="NoUsers" Visible="false" Text="No users left to authorize"></asp:Label>
+        <div>
+            <h2>LOG</h2>
+            <hr />
+        </div>
+        <asp:Table runat="server" ID="LogTable" CssClass="self-center" CellPadding="1">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Type</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Message</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+        </asp:Table>
     </asp:Panel>
 </asp:Content>

@@ -1,11 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Data;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Main;
 using Invitation;
-using System.Threading;
+using Log;
 
 namespace Data.Tests
 {
@@ -16,6 +14,7 @@ namespace Data.Tests
         private DB db;
         private User user;
         private Secret secret;
+        private LogEntry entry;
         private InvitationLink link;
         private static readonly string adminEmail = "admin@ubusecret.es";
 
@@ -26,6 +25,7 @@ namespace Data.Tests
             user = new User("User", "user@ubusecret.com", "P@ssw0rd");
             secret = new Secret("Secret", "Hidden Message", user);
             link = new InvitationLink(secret, DateTime.Now.AddDays(1));
+            entry = new LogEntry(Entry.LOG_IN, $"Logged in at time {DateTime.Now}");
         }
 
         [TestCleanup]
@@ -35,6 +35,7 @@ namespace Data.Tests
             secret = null;
             link = null;
             db = null;
+            entry = null;
             DB.Reset();
         }
 
@@ -503,7 +504,7 @@ namespace Data.Tests
         [TestMethod()]
         public void SecretListTest()
         {
-            // Insert user.
+            // Insert secret.
             db.InsertSecret(secret);
 
             // Check is in list.
@@ -669,6 +670,75 @@ namespace Data.Tests
             db.InsertInvitation(link);
             count = db.InvitationCount();
             Assert.AreEqual(count, 1);
+        }
+
+        [TestMethod()]
+        public void LogListTest()
+        {
+            // Insert log.
+            db.InsertLog(entry);
+
+            // Check is in list.
+            IList<LogEntry> entryList = db.LogList();
+            bool isInList = entryList.Contains(entry);
+            Assert.IsTrue(isInList);
+        }
+
+        [TestMethod()]
+        public void InsertLogTest()
+        {
+            // Insert log.
+            bool inserted = db.InsertLog(entry);
+            Assert.IsTrue(inserted);
+
+            // Insert again.
+            inserted = db.InsertLog(entry);
+            Assert.IsFalse(inserted);
+
+            // Insert null.
+            inserted = db.InsertLog(null);
+            Assert.IsFalse(inserted);
+        }
+
+        [TestMethod()]
+        public void LogCountTest()
+        {
+            // Initial count should be 0.
+            int count = db.LogCount();
+            Assert.AreEqual(count, 0);
+
+            // Insert entry.
+            db.InsertLog(entry);
+            count = db.LogCount();
+            Assert.AreEqual(count, 1);
+        }
+
+        [TestMethod()]
+        public void ContainsLogTest()
+        {
+            bool containsLog = db.ContainsLog(entry);
+            Assert.IsFalse(containsLog);
+
+            // Inserting entry.
+            db.InsertLog(entry);
+            containsLog = db.ContainsLog(entry);
+            Assert.IsTrue(containsLog);
+
+            // Does not contain null entry.
+            bool containsNull = db.ContainsLog(null);
+            Assert.IsFalse(containsNull);
+        }
+
+        [TestMethod()]
+        public void ContainsLogTest1()
+        {
+            bool containsLog = db.ContainsLog(entry.Id);
+            Assert.IsFalse(containsLog);
+
+            // Inserting entry.
+            db.InsertLog(entry);
+            containsLog = db.ContainsLog(entry.Id);
+            Assert.IsTrue(containsLog);
         }
     }
 }

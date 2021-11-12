@@ -58,6 +58,8 @@ namespace www.add
             {
                 Secret secret = new Secret(SecretTitle.Text, SecretMessage.Text, owner);
                 db.InsertSecret(secret);
+                // Update log.
+                AppLogs.CreateSecret(secret);
                 Response.Redirect("/default.aspx");
             }
         }

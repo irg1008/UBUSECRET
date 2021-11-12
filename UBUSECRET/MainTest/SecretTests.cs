@@ -30,7 +30,6 @@ namespace Main.Tests
             Assert.IsNotNull(s.Id);
             Assert.IsNotNull(s.Title);
             Assert.IsNotNull(s.Message);
-            Assert.IsTrue(s.Message is byte[]); // Encrypted.
             Assert.IsNotNull(s.Owner);
             Assert.IsNotNull(s.Consumers);
         }

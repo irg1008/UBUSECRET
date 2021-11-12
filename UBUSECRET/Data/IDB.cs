@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Invitation;
+using Log;
 
 namespace Data
 {
@@ -78,6 +79,18 @@ namespace Data
         int InvitationCount();
 
         // No next or previous.
+        // ----------
+
+        // LOG.
+        // ----------
+        List<LogEntry> LogList();
+
+        bool InsertLog(LogEntry entry);
+
+        bool ContainsLog(Guid id);
+        bool ContainsLog(LogEntry entry);
+
+        int LogCount();
         // ----------
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using Log;
 using Main;
 using Data;
 
@@ -24,6 +24,29 @@ namespace www.admin
                 throw new HttpException(404, "");
 
             LoadRequestedUsers();
+            LoadLog();
+        }
+
+        private void LoadLog()
+        {
+            List<LogEntry> logs = db.LogList();
+
+            // Clean table.
+            while (LogTable.Rows.Count > 1) LogTable.Rows.RemoveAt(1);
+
+            foreach (LogEntry log in logs)
+            {
+                TableCell type = new TableCell { Text = log.Entry };
+                TableCell message = new TableCell { Text = log.Message };
+                TableCell date = new TableCell { Text = log.Date.ToString() };
+
+                TableRow newRow = new TableRow();
+                newRow.Cells.Add(type);
+                newRow.Cells.Add(message);
+                newRow.Cells.Add(date);
+
+                LogTable.Rows.Add(newRow);
+            };
         }
 
         private void LoadRequestedUsers()

@@ -212,6 +212,7 @@
     <Compile Include="master\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="utils\AppLogs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
@@ -236,6 +237,10 @@
     <ProjectReference Include="..\Invitation\Invitation.csproj">
       <Project>{4f65e1ee-0da0-4190-a204-b9fe1c83cfd2}</Project>
       <Name>Invitation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log\Log.csproj">
+      <Project>{fb54e7b2-9f02-4306-93ad-0dbe4d1c510f}</Project>
+      <Name>Log</Name>
     </ProjectReference>
     <ProjectReference Include="..\Main\Main.csproj">
       <Project>{af4654de-370e-4d63-bbcc-5cd13e23a437}</Project>

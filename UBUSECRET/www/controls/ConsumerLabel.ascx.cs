@@ -34,6 +34,7 @@ namespace www.controls
         protected void DeleteConsumer(object sender, EventArgs e)
         {
             Secret.RemoveConsumer(Consumer);
+            AppLogs.DetatchConsumer(Consumer, Secret);
             OnRemove?.Invoke(sender, e);
         }
     }

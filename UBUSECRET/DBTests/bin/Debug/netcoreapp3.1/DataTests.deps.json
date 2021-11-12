@@ -1089,6 +1089,7 @@
       "Data/1.0.0": {
         "dependencies": {
           "Invitation": "1.0.0",
+          "Log": "1.0.0",
           "Main": "1.0.0"
         },
         "runtime": {
@@ -1102,6 +1103,14 @@
         },
         "runtime": {
           "Invitation.dll": {}
+        }
+      },
+      "Log/1.0.0": {
+        "dependencies": {
+          "Main": "1.0.0"
+        },
+        "runtime": {
+          "Log.dll": {}
         }
       },
       "Main/1.0.0": {
@@ -1758,6 +1767,11 @@
       "sha512": ""
     },
     "Invitation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Log/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

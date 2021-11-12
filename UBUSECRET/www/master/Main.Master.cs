@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Data;
-using System.Threading;
+using Log;
 using System.Drawing;
 using Main;
+using Utils;
 
 namespace www
 {
@@ -21,8 +18,11 @@ namespace www
 
     public partial class MainMaster : System.Web.UI.MasterPage
     {
+        DB db;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            db = DB.GetInstance();
             DB.LoadSampleData();
 
             // Reset Pop Up if postback.
@@ -52,9 +52,17 @@ namespace www
 
         public void LogIn(User user)
         {
+            // Set seesion variables.
             Page.Session["is-logged"] = true;
             Page.Session["user"] = user;
+
+            // Activate user.
             user.Activate();
+
+            // Update log.
+            AppLogs.LogIn(user);
+
+            // Redirect to home.
             Response.Redirect("/default.aspx");
         }
 
@@ -65,6 +73,9 @@ namespace www
             User user = GetUser();
             if (user != null)
             {
+                // Update log.
+                AppLogs.LogOut(user);
+
                 user.Unactivate();
                 user.LastSeen = DateTime.Now;
             }

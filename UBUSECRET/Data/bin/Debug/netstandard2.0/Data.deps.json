@@ -10,6 +10,7 @@
       "Data/1.0.0": {
         "dependencies": {
           "Invitation": "1.0.0",
+          "Log": "1.0.0",
           "Main": "1.0.0",
           "NETStandard.Library": "2.0.3"
         },
@@ -38,6 +39,14 @@
         },
         "runtime": {
           "Invitation.dll": {}
+        }
+      },
+      "Log/1.0.0": {
+        "dependencies": {
+          "Main": "1.0.0"
+        },
+        "runtime": {
+          "Log.dll": {}
         }
       },
       "Main/1.0.0": {
@@ -87,6 +96,11 @@
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
     "Invitation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Log/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
