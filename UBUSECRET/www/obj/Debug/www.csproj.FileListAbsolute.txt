@@ -176,3 +176,5 @@ C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUS
 C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Invitation.pdb
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Log.dll
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Log.pdb
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Log.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Git\UBUSECRET\www\bin\Log.pdb
