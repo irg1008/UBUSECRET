@@ -20,7 +20,7 @@ namespace Log
 
     public class LogEntry
     {
-        private static Dictionary<Entry, string> enumValues = new Dictionary<Entry, string>() {
+        private static readonly Dictionary<Entry, string> enumValues = new Dictionary<Entry, string>() {
             { Log.Entry.LOG_IN, "Log In" },
             { Log.Entry.LOG_OUT, "Log Out" },
             { Log.Entry.ADD_CONSMER, "New consumer" },

@@ -294,23 +294,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Iván\\.nuget\\packages\\": {},
+    "C:\\Users\\Ivan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\Iván\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\obj\\",
+      "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Iván\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -319,20 +319,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://packagesource": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Invitation\\Invitation.csproj": {
-              "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Invitation\\Invitation.csproj"
+            "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Invitation\\Invitation.csproj": {
+              "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Invitation\\Invitation.csproj"
             },
-            "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Log\\Log.csproj": {
-              "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Log\\Log.csproj"
+            "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Log\\Log.csproj": {
+              "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Log\\Log.csproj"
             },
-            "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj": {
-              "projectPath": "C:\\Users\\Iván\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj"
+            "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj": {
+              "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\Main\\Main.csproj"
             }
           }
         }
@@ -364,7 +365,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

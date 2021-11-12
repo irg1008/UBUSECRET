@@ -52,7 +52,7 @@ namespace www
 
         public static void CreateInvitation(InvitationLink link, Secret secret)
         {
-            Insert(Entry.DETACH_FROM_SECRET, $"Owner with id: {secret.Owner.Id}. created an invitation with id: {link.Id} for the secret with id: {secret.Id}");
+            Insert(Entry.CREATE_INVITATION, $"Owner with id: {secret.Owner.Id}. created an invitation with id: {link.Id} for the secret with id: {secret.Id}");
         }
     }
 }
