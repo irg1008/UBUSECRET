@@ -16,7 +16,7 @@
         <span class="w-full flex justify-between items-center">
             <label>Password</label>
             <p class="text-sm">
-                <asp:HyperLink CssClass="underline cursor-pointer" NavigateUrl="~/auth/RecoverPassword.aspx" runat="server">Change your password</asp:HyperLink>
+                <asp:HyperLink CssClass="underline cursor-pointer" NavigateUrl="~/auth/RecoverPassword.aspx" runat="server" TabIndex="-1">Change your password</asp:HyperLink>
             </p>
         </span>
         <asp:TextBox runat="server" ID="Password_Input" TextMode="Password" Text="" placeholder="G6D6M4Q$Z7cYmb"></asp:TextBox>
