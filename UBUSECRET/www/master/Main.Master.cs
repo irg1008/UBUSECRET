@@ -101,7 +101,7 @@ namespace www
         public bool IsLogged()
         {
             var loggedSession = Page.Session["is-logged"];
-            if (loggedSession == null) LogOut();
+            if (loggedSession == null) Page.Session["is-logged"] = false;
             bool isLogged = (bool)Page.Session["is-logged"];
             return isLogged;
         }

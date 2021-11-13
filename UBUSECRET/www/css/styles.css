@@ -162,16 +162,16 @@ hr {
 .path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: dash 5s linear 1s forwards;
+    animation: dash 3s linear 0.2s forwards;
 }
 
 .eyes {
     opacity: 0;
-    animation: fade-in 3s linear 1s forwards;
+    animation: fade-in 2s linear 0.2s forwards;
 }
 
 .logo-container {
-    animation: shake 0.2s linear 4s;
+    animation: shake 0.2s linear 3s;
 }
 
 .logo-wrapper {
