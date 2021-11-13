@@ -87,7 +87,7 @@ namespace Data
 
         bool InsertLog(LogEntry entry);
 
-        bool ContainsLog(Guid id);
+        bool ContainsLog(int id);
         bool ContainsLog(LogEntry entry);
 
         int LogCount();

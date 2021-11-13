@@ -73,7 +73,7 @@
             </asp:Panel>
 
             <asp:Panel runat="server" Visible="false" ID="LinkContainer">
-                <p class="text-lg font-bold">Copy this and share it to grant other users access to his secret</p>
+                <p class="text-lg font-bold">Copy this and share it to grant other users access to this secret</p>
                 <div class="mt-4 text-black bg-white border-2 border-gray-600 rounded-2xl flex overflow-hidden">
                     <code class="m-2">
                         <asp:Label CssClass="break-all" runat="server" ID="InvitationLink"></asp:Label>

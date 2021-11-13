@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Main;
+using Utils;
 
 namespace Log
 {
@@ -20,6 +19,8 @@ namespace Log
 
     public class LogEntry
     {
+        private readonly IdGen idGen = new IdGen();
+
         private static readonly Dictionary<Entry, string> enumValues = new Dictionary<Entry, string>() {
             { Log.Entry.LOG_IN, "Log In" },
             { Log.Entry.LOG_OUT, "Log Out" },
@@ -31,7 +32,7 @@ namespace Log
             { Log.Entry.CREATE_INVITATION, "New invitation" }
         };
 
-        private readonly Guid id;
+        private readonly int id;
         private string entry;
         private DateTime date;
         private string message;
@@ -40,7 +41,7 @@ namespace Log
         {
             // Create static dictionary.
 
-            this.id = Guid.NewGuid();
+            this.id = idGen.NewId();
             Entry = Parse(entry);
             Date = DateTime.Now;
             Message = message == "" ? "No further message provided" : message;
@@ -51,7 +52,7 @@ namespace Log
             return enumValues[entry];
         }
 
-        public Guid Id => id;
+        public int Id => id;
         public string Entry { get => entry; set => entry = value; }
         public DateTime Date { get => date; set => date = value; }
         public string Message { get => message; set => message = value; }

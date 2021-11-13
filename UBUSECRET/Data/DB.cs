@@ -16,8 +16,8 @@ namespace Data
         private int currentSecret = -1;
         private readonly SortedList<int, User> tblUsers = new SortedList<int, User>();
         private readonly SortedList<int, Secret> tblSecrets = new SortedList<int, Secret>();
+        private readonly SortedList<int, LogEntry> tblLogs = new SortedList<int, LogEntry>();
         private readonly SortedList<Guid, InvitationLink> tblInvitations = new SortedList<Guid, InvitationLink>();
-        private readonly SortedList<Guid, LogEntry> tblLogs = new SortedList<Guid, LogEntry>();
 
         private DB()
         {
@@ -362,7 +362,7 @@ namespace Data
             return tblLogs.Count;
         }
 
-        public bool ContainsLog(Guid id)
+        public bool ContainsLog(int id)
         {
             return tblLogs.ContainsKey(id);
         }
