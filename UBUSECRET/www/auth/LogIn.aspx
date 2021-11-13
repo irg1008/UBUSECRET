@@ -1,6 +1,6 @@
 ﻿<%@ MasterType VirtualPath="~/master/Nested_Form.master" %>
 
-<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/LogIn.aspx.cs" Inherits="www.LogIn" Title="Log In" %>
+<%@ Page Language="C#" MasterPageFile="~/master/Nested_Form.Master" AutoEventWireup="true" CodeBehind="~/auth/LogIn.aspx.cs" Inherits="www.auth.LogIn" Title="Log In" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Title">
     log in
@@ -12,11 +12,17 @@
         <asp:TextBox autofocus="autofocus" runat="server" ID="Email_Input" AutoCompleteType="Email" TextMode="Email" Text="" placeholder="example@email.com"></asp:TextBox>
         <asp:Label CssClass="error" ID="EmailError" runat="server" />
     </label>
-    <label>
-        Password
+    <div>
+        <span class="w-full flex justify-between items-center">
+            <label>Password</label>
+            <p class="text-sm">
+                <asp:HyperLink CssClass="underline cursor-pointer" NavigateUrl="~/auth/RecoverPassword.aspx" runat="server">Change your password</asp:HyperLink>
+            </p>
+        </span>
         <asp:TextBox runat="server" ID="Password_Input" TextMode="Password" Text="" placeholder="G6D6M4Q$Z7cYmb"></asp:TextBox>
         <asp:Label CssClass="error" ID="PasswordError" runat="server" />
-    </label>
+    </div>
+
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Bottom">

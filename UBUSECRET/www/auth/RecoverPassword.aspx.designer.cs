@@ -11,7 +11,7 @@ namespace www.auth
 {
 
 
-    public partial class LogIn
+    public partial class RecoverPassword
     {
 
         /// <summary>
@@ -31,24 +31,6 @@ namespace www.auth
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label EmailError;
-
-        /// <summary>
-        /// Control Password_Input.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password_Input;
-
-        /// <summary>
-        /// Control PasswordError.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PasswordError;
 
         /// <summary>
         /// Control button_arrow.

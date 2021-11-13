@@ -95,6 +95,7 @@
     <Content Include="add\Secret.aspx" />
     <Content Include="admin\Users.aspx" />
     <Content Include="auth\NewPassword.aspx" />
+    <Content Include="auth\RecoverPassword.aspx" />
     <Content Include="auth\SignUp.aspx" />
     <Content Include="controls\Secrets.ascx" />
     <Content Include="controls\Secret.ascx" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="auth\NewPassword.aspx.designer.cs">
       <DependentUpon>NewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="auth\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>

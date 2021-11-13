@@ -20,7 +20,7 @@ namespace www.auth
             db = DB.GetInstance();
 
             if (!IsPostBack)
-                Master.Master.ShowPopUp("You need to set up a new password to activate your account. Don't worry, you only have to do this once.", PopUpType.INFO);
+                Master.Master.ShowPopUp("Create a new password", PopUpType.INFO);
 
             // If user email is not correct.
             string userEmail = Request.QueryString["email"];

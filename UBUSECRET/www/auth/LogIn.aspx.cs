@@ -2,7 +2,7 @@
 using Data;
 using Main;
 
-namespace www
+namespace www.auth
 {
     public partial class LogIn : System.Web.UI.Page
     {
