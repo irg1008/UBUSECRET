@@ -30,5 +30,9 @@
                 <asp:TableHeaderCell>Date</asp:TableHeaderCell>
             </asp:TableHeaderRow>
         </asp:Table>
+        <div runat="server" id="ClearLogButton" class="w-full flex items-center justify-center">
+            <button runat="server" onserverclick="ClearLog" type="button" class="bg-red-600">Clear Log</button>
+        </div>
+        <asp:Label CssClass="text-white mt-4" runat="server" ID="NoLog" Visible="false" Text="Wait for some activity to happen to appear here"></asp:Label>
     </asp:Panel>
 </asp:Content>

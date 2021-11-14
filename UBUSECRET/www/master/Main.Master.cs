@@ -18,11 +18,9 @@ namespace www
 
     public partial class MainMaster : System.Web.UI.MasterPage
     {
-        DB db;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = DB.GetInstance();
             DB.LoadSampleData();
 
             // Reset Pop Up if postback.
@@ -68,8 +66,6 @@ namespace www
 
         public void LogOut()
         {
-            Page.Session["is-logged"] = false;
-            Page.Session["user"] = null;
             User user = GetUser();
             if (user != null)
             {
@@ -78,7 +74,10 @@ namespace www
 
                 user.Unactivate();
                 user.LastSeen = DateTime.Now;
+
+                Page.Session["user"] = null;
             }
+            Page.Session["is-logged"] = false;
             Response.Redirect("/auth/LogIn.aspx");
         }
 

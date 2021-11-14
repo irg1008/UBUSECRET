@@ -63,7 +63,7 @@
                     </asp:Panel>
 
                     <div class="w-auto">
-                        <button runat="server" onserverclick="LogOut" type="button">Log Out</button>
+                        <button id="LogOutBtn" runat="server" onserverclick="LogOut" type="button">Log Out</button>
                     </div>
                 </div>
             </navbar>

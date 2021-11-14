@@ -12,14 +12,27 @@ namespace Data
 {
     public class DB : IDB
     {
-        private int currentUser = -1;
-        private int currentSecret = -1;
-        private readonly SortedList<int, User> tblUsers = new SortedList<int, User>();
-        private readonly SortedList<int, Secret> tblSecrets = new SortedList<int, Secret>();
-        private readonly SortedList<int, LogEntry> tblLogs = new SortedList<int, LogEntry>();
-        private readonly SortedList<Guid, InvitationLink> tblInvitations = new SortedList<Guid, InvitationLink>();
+        private int currentUser;
+        private int currentSecret;
+        private readonly SortedList<int, User> tblUsers;
+        private readonly SortedList<int, Secret> tblSecrets;
+        private readonly SortedList<int, LogEntry> tblLogs;
+        private readonly SortedList<Guid, InvitationLink> tblInvitations;
 
         private DB()
+        {
+            currentSecret = -1;
+            currentUser = -1;
+
+            tblUsers = new SortedList<int, User>();
+            tblSecrets = new SortedList<int, Secret>();
+            tblLogs = new SortedList<int, LogEntry>();
+            tblInvitations = new SortedList<Guid, InvitationLink>();
+
+            AddInitData();
+        }
+
+        private void AddInitData()
         {
             // Inicilización de los elementos de la base de datos
             User uAdmin = new User("Pepito", "admin@ubusecret.es", "P@ssword2");
@@ -91,7 +104,6 @@ namespace Data
         public static void Reset()
         {
             _instance = null;
-
         }
 
         public bool ContainsSecret(Secret secret)
@@ -371,6 +383,11 @@ namespace Data
         {
             if (entry == null) return false;
             return ContainsLog(entry.Id);
+        }
+
+        public void ClearLogs()
+        {
+            tblLogs.Clear();
         }
     }
 }

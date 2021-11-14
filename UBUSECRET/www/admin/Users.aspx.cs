@@ -27,26 +27,48 @@ namespace www.admin
             LoadLog();
         }
 
+        private void CleanLogTable()
+        {
+            // Clean table.
+            while (LogTable.Rows.Count > 1) LogTable.Rows.RemoveAt(1);
+        }
+
         private void LoadLog()
         {
             List<LogEntry> logs = db.LogList();
 
-            // Clean table.
-            while (LogTable.Rows.Count > 1) LogTable.Rows.RemoveAt(1);
-
-            foreach (LogEntry log in logs)
+            if (logs.Count() == 0)
             {
-                TableCell type = new TableCell { Text = log.Entry };
-                TableCell message = new TableCell { Text = log.Message };
-                TableCell date = new TableCell { Text = log.Date.ToString() };
+                NoLog.Visible = true;
+                LogTable.Visible = false;
+                ClearLogButton.Visible = false;
+            }
+            else
+            {
+                // Clean table.
+                CleanLogTable();
 
-                TableRow newRow = new TableRow();
-                newRow.Cells.Add(type);
-                newRow.Cells.Add(message);
-                newRow.Cells.Add(date);
+                foreach (LogEntry log in logs)
+                {
+                    TableCell type = new TableCell { Text = log.Entry };
+                    TableCell message = new TableCell { Text = log.Message };
+                    TableCell date = new TableCell { Text = log.Date.ToString() };
 
-                LogTable.Rows.Add(newRow);
-            };
+                    TableRow newRow = new TableRow();
+                    newRow.Cells.Add(type);
+                    newRow.Cells.Add(message);
+                    newRow.Cells.Add(date);
+
+                    LogTable.Rows.Add(newRow);
+                };
+            }
+        }
+
+        protected void ClearLog(object sender, EventArgs e)
+        {
+            db.ClearLogs();
+            CleanLogTable();
+            LoadLog();
         }
 
         private void LoadRequestedUsers()

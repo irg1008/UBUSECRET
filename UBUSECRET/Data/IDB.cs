@@ -90,6 +90,8 @@ namespace Data
         bool ContainsLog(int id);
         bool ContainsLog(LogEntry entry);
 
+        void ClearLogs();
+
         int LogCount();
         // ----------
     }

@@ -16,7 +16,7 @@ namespace Log.Tests
             LogEntry entry = new LogEntry(Entry.ADD_CONSMER, "Adding new consumer");
 
             Assert.IsNotNull(entry.Id);
-            Assert.IsInstanceOfType(entry.Id, typeof(Guid));
+            Assert.IsInstanceOfType(entry.Id, typeof(int));
 
             Assert.IsNotNull(entry.Message);
             Assert.IsInstanceOfType(entry.Message, typeof(string));

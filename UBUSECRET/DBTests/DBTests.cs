@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Data;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using Main;
@@ -10,7 +11,6 @@ namespace Data.Tests
     [TestClass()]
     public class DBTests
     {
-
         private DB db;
         private User user;
         private Secret secret;
@@ -77,6 +77,7 @@ namespace Data.Tests
             Assert.IsTrue(containsUser);
 
             DB.Reset();
+            // We need to get the instance again because of C# does not update the pointer to the singleton DB instance.
             db = DB.GetInstance();
 
             // Check data does not exist anymore.
@@ -739,6 +740,18 @@ namespace Data.Tests
             db.InsertLog(entry);
             containsLog = db.ContainsLog(entry.Id);
             Assert.IsTrue(containsLog);
+        }
+
+        [TestMethod()]
+        public void ClearLogsTest()
+        {
+            // Insert entry.
+            db.InsertLog(entry);
+
+            // Clear logs.
+            db.ClearLogs();
+
+            Assert.IsFalse(db.ContainsLog(entry));
         }
     }
 }

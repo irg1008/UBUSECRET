@@ -51,6 +51,24 @@ namespace www.admin
         protected global::System.Web.UI.WebControls.Table LogTable;
 
         /// <summary>
+        /// Control ClearLogButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ClearLogButton;
+
+        /// <summary>
+        /// Control NoLog.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoLog;
+
+        /// <summary>
         /// Propiedad Master.
         /// </summary>
         /// <remarks>
