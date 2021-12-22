@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAPI
 {
-    class DB : IDB
+    public class DB : IDB
     {
         public bool addSecret(Secret secret)
         {
@@ -27,22 +27,17 @@ namespace DataAPI
             throw new NotImplementedException();
         }
 
+        public List<User> listPendientUsers()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Secret> listReceivedSecrets(User user)
         {
             throw new NotImplementedException();
         }
 
-        public List<Secret> listSecrets()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<User> listUnactiveUsers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<User> listUsers()
         {
             throw new NotImplementedException();
         }
