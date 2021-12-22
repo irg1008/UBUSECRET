@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LK9VPxMpHmxUCYh1if72EO+paL1sGOLTK6BKZcanaH1VxAinsDsuP4DB1LtK9IL9RsHadwrIovaS1Q5Z02srVg==",
+  "dgSpecHash": "DUKVouJvPA1anvzfrKF2DNjbLjCESCo92oZLJCYPdsy0EfuURDVpQOS3Ce+4Hy6BkufWhzR3WcUwlPeAgz5Yrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\LogTests\\LogTests.csproj",
+  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\LogTests\\LogTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

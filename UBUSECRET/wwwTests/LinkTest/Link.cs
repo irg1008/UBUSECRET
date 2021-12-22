@@ -125,7 +125,7 @@ namespace SeleniumTests
 
             // Check link secret has consumer.
             GoToLastSecret();
-            Assert.AreEqual("Guest", driver.FindElement(By.Id("body_1_ConsumerName")).Text);
+            Assert.AreEqual("Guest", driver.FindElement(By.XPath("//*[@id='body_ConsumerList']/div[last()]/span")).Text);
 
             // Log out.
             LogOut();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T9jbM6TVtdfKmEfDk9GUze/WqF+uZVJEPDyXxV4CxuqO29lZwVjbCwdw/qoLgP2qEPudcY2Quzy51tJOtwMEjA==",
+  "dgSpecHash": "u3LvAE2NAOR7o2ZZ/9oPvwDHARS+vSjRY2WAwsVzwte4faehEQSOkx8qfW0socCQjyulsm8JN6ekU2Eib72R8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Git\\UBUSECRET\\wwwTests\\wwwTests.csproj",
+  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\wwwTests\\wwwTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

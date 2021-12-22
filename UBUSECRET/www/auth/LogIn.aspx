@@ -22,7 +22,6 @@
         <asp:TextBox runat="server" ID="Password_Input" TextMode="Password" Text="" placeholder="G6D6M4Q$Z7cYmb"></asp:TextBox>
         <asp:Label CssClass="error" ID="PasswordError" runat="server" />
     </div>
-
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="Form_Bottom">

@@ -152,7 +152,7 @@ namespace SeleniumTests
             Assert.AreEqual("Guest added successfully", driver.FindElement(By.Id("PopUp_Text")).Text);
 
             // Assert user tag.
-            Assert.AreEqual("Guest", driver.FindElement(By.Id("body_1_ConsumerName")).Text);
+            Assert.AreEqual("Guest", driver.FindElement(By.XPath("//*[@id='body_ConsumerList']/div[last()]/span")).Text);
 
             LogOut();
 
