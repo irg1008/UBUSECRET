@@ -19,42 +19,57 @@ namespace DataAPI
         public List<Secret> Secrets { get => secrets; set => secrets = value; }
         public List<User> Users { get => users; set => users = value; }
 
-        public bool addSecret(Secret secret)
+        public bool AddSecret(Secret secret)
         {
             throw new NotImplementedException();
         }
 
-        public bool getSecret(int id)
+        public bool AddUser(User user)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> listActiveUsers()
+        public Secret GetSecret(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Secret> listOwnSecrets(User user)
+        public User GetUser(string email)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> listPendientUsers()
+        public List<User> ListActiveUsers()
         {
             throw new NotImplementedException();
         }
 
-        public List<Secret> listReceivedSecrets(User user)
+        public List<Secret> ListOwnSecrets(User user)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> listInactiveUsers()
+        public List<User> ListPendientUsers()
         {
             throw new NotImplementedException();
         }
 
-        public Secret removeSecret(int id)
+        public List<Secret> ListReceivedSecrets(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<User> ListUnactiveUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Secret RemoveSecret(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User RemoveUser(string email)
         {
             throw new NotImplementedException();
         }

@@ -7,24 +7,35 @@ namespace DataAPI
 {
     public interface IDB
     {
+        // RF03
+        bool AddUser(User user);
+
+        // RF04
+        List<User> GetUser(String email);
+
+        // RF05
+        User RemoveUser(String email);
+
+        // RF06
         /// <summary>
         /// Devuelve un listado de los usuarios activos
         /// </summary>
         /// <returns>Lista con los usuarios activos (List\<User\>) </returns>
-        List<User> listActiveUsers();
+        List<User> ListActiveUsers();
+        List<User> ListUnactiveUsers();
+        List<User> ListPendientUsers();
 
-        List<User> listUnactiveUsers();
+        // RF07
+        bool AddSecret(Secret secret);
 
-        List<User> listPendientUsers();
+        // RF08
+        Secret GetSecret(int id);
 
-        bool addSecret(Secret secret);
+        // RF09
+        Secret RemoveSecret(int id);
 
-        bool getSecret(int id);
-
-        Secret removeSecret(int id);
-
-        List<Secret> listOwnSecrets(User user);
-
-        List<Secret> listReceivedSecrets(User user);
+        // RF10
+        List<Secret> ListOwnSecrets(User user);
+        List<Secret> ListReceivedSecrets(User user);
     }
 }
