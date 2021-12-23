@@ -24,14 +24,11 @@ namespace Main.Tests
         [TestMethod()]
         public void To_JSONTest()
         {
-            string expectedJSON = @"
-            {
-                'id': 2,
-                'title': A,
-                'message: 'Secret a',
-                
-            }";
+            // Conseguimos el JSON
             string sJSON = s.To_JSON();
+
+            // Deserialziamos el JSON recibido.
+            Secret desSecret = s.From_JSON();
             
             Assert.AreEqual(expectedJSON, sJSON);
         }
