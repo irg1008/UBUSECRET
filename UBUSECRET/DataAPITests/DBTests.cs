@@ -119,22 +119,90 @@ namespace DataAPI.Tests
         [TestMethod()]
         public void ListOwnSecretsTest()
         {
-            User owner = this.user;
+            User owner = new User("Owner", "owner@ofsecrets.com", "P@ssword2");
 
-            List<Secret> ownedSecrets = db.ListOwnSecrets(owner);
+            // Recibimos la lista de secretos del usuario.
+            List<Secret> ownedSecretsFromDB = db.ListOwnSecrets(owner);
 
+            // Comprobamos que está vacía.
+            Assert.AreEqual(ownedSecretsFromDB.Count, 0, "The list of secrets should be empty at start");
+
+            // Insertamos varios secretos con el usuario como dueño.
+            // Cambiar esto a DDT.
+            List<Secret> ownedSecrets = new List<Secret> {
+                new Secret("Secreto 1", "Mensaje 1", owner),
+                new Secret("Secreto 2", "Mensaje 2", owner),
+                new Secret("Secreto 3", "Mensaje 3", owner),
+            };
+
+            foreach (Secret s in ownedSecrets)
+            {
+                db.AddSecret(s);
+            }
+
+            // Recibimos la lista de nuevo.
+            ownedSecretsFromDB = db.ListOwnSecrets(owner);
+
+            // Comprobamos que es igual a la insertada.
+            Assert.AreEqual(ownedSecrets, ownedSecretsFromDB, "Inserted owner secrets and recieved are not equal");
+
+            // Recuperamos secretos de un usuario nulo.
+            List<Secret> nullOwnerSecrets = db.ListOwnSecrets(null);
+            Assert.IsNull(nullOwnerSecrets, "Cannot pass a null user to fetch his secrets");
         }
 
         [TestMethod()]
         public void ListReceivedSecretsTest()
         {
-            Assert.Fail(); //TODO
+            User guest = new User("Guest", "Guest@ofsecrets.com", "P@ssword2");
+
+            // Recibimos la lista de secretos accesibles por el usuario.
+            List<Secret> recievedSecretsFromDB = db.ListReceivedSecrets(guest);
+
+            // Comprobamos que está vacía.
+            Assert.AreEqual(recievedSecretsFromDB.Count, 0, "The list of secrets should be empty at start");
+
+            // Insertamos varios secretos con el usuario como invitado.
+            // Cambiar esto a DDT.
+            List<Secret> recievedSecrets = new List<Secret> {
+                new Secret("Secreto 1", "Mensaje 1", this.user),
+                new Secret("Secreto 2", "Mensaje 2", this.user),
+                new Secret("Secreto 3", "Mensaje 3", this.user),
+            };
+
+            foreach (Secret s in recievedSecrets)
+            {
+                // Añadimos el invitado a los secretos antes de insertar.
+                s.AddConsumer(guest);
+                db.AddSecret(s);
+            }
+
+            // Recibimos la lista de nuevo.
+            recievedSecretsFromDB = db.ListOwnSecrets(guest);
+
+            // Comprobamos que es igual a la insertada.
+            Assert.AreEqual(recievedSecrets, recievedSecretsFromDB, "Inserted guest secrets and recieved are not equal");
+
+            // Recuperamos secretos de un usuario nulo.
+            List<Secret> nullOwnerSecrets = db.ListReceivedSecrets(null);
+            Assert.IsNull(nullOwnerSecrets, "Cannot pass a null user to fetch recieved secrets");
         }
 
         [TestMethod()]
         public void RemoveSecretTest()
         {
-            Assert.Fail(); //TODO
+            Secret s = this.secret;
+
+            // Insertamos el secreto.
+            db.AddSecret(s);
+
+            // Eliminamos el secreto.
+            Secret deletedSecret = db.RemoveSecret(s.Id);
+            Assert.AreEqual(s, deletedSecret, "The returned secret is not consistant with the inserted one");
+
+            // Comprobamos que está eliminado.
+            Secret deletedSecretDB = db.GetSecret(deletedSecret.Id);
+            Assert.IsNull(deletedSecretDB, "The secret is not being deleted from DB");
         }
 
         [TestMethod()]
@@ -153,6 +221,12 @@ namespace DataAPI.Tests
             // Insertamos un usuario nulo.
             bool insertedNull = db.AddUser(null);
             Assert.IsFalse(insertedNull, "Null or empty users are not allowed");
+
+            // Eliminación con id vacío o nulo.
+            Secret emptyIdSecret = db.RemoveSecret(0);
+            Assert.IsNull(emptyIdSecret, "Attempt to remove a user with id 0 should return null");
+            Secret minusIdSecret = db.RemoveSecret(-1);
+            Assert.IsNull(minusIdSecret, "Attempt to remove a secret with id less than 0 should return null");
         }
 
         [TestMethod()]
@@ -186,9 +260,21 @@ namespace DataAPI.Tests
             // Insertamos el usuario.
             db.AddUser(u);
 
+            // Insertamos un secreto con el usuario como dueño, para comprobar que se elimina al eliminar este.
+            Secret tmpSecret = new Secret("Tmp secret", "", u);
+            db.AddSecret(tmpSecret);
+
             // Eliminamos el usuario.
             User deletedUser = db.RemoveUser(u.Email);
             Assert.AreEqual(u, deletedUser, "The returned user is not consistent with the inserted one");
+
+            // Comprobamos que está eliminado.
+            User deletedUserDB = db.GetUser(deletedUser.Email);
+            Assert.IsNull(deletedUserDB, "The user is not being deleted from DB");
+
+            // Comprobamos que el secreto se ha eliminado también.
+            Secret deletedSecret = db.GetSecret(tmpSecret.Id);
+            Assert.IsNull(deletedSecret, "Secrets owned by the user to be deleted should be deleted as well");
 
             // Eliminación con email vacío o nulo.
             User emptyEmailUser = db.RemoveUser(u.Email);
