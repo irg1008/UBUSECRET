@@ -26,7 +26,12 @@ namespace DataAPI
 
         public bool AddUser(User user)
         {
-            throw new NotImplementedException();
+            foreach (User valor in this.users)
+                if (valor.Email == user.Email)
+                    return false;
+
+            this.users.Add(user)
+            return true;
         }
 
         public Secret GetSecret(int id)
@@ -36,8 +41,11 @@ namespace DataAPI
 
         public User GetUser(string email)
         {
+            foreach (User valor in this.users)
+                if (email == valor.Email)
+                    return valor;
 
-            throw new NotImplementedException();
+            return null;
         }
 
         public List<User> ListActiveUsers()
@@ -47,7 +55,13 @@ namespace DataAPI
 
         public List<Secret> ListOwnSecrets(User user)
         {
-            throw new NotImplementedException();
+            List<Secret> retorno = new List<Secret>();
+
+            foreach (Secret valor in this.secrets)
+                if (valor.Owner.Email == user.Id)
+                    retorno.add(valor);
+
+            return retorno;
         }
 
         public List<User> ListPendientUsers()
@@ -57,7 +71,14 @@ namespace DataAPI
 
         public List<Secret> ListReceivedSecrets(User user)
         {
-            throw new NotImplementedException();
+            List<Secret> retorno = new List<Secret>();
+
+            foreach (Secret secret in this.secrets)
+                foreach (User consumer in )
+                    if(consumer.Email == user.Email)
+                        retorno.add(secret);
+
+            return retorno;
         }
 
         public List<User> ListUnactiveUsers()
@@ -67,12 +88,26 @@ namespace DataAPI
 
         public Secret RemoveSecret(int id)
         {
-            throw new NotImplementedException();
+            foreach (Secret valor in this.secrets)
+                if (valor.Id == id)
+                {
+                    this.users.Remove(valor);
+                    return valor;
+                }
+
+            return null;
         }
 
         public User RemoveUser(string email)
         {
-            throw new NotImplementedException();
+            foreach (User valor in this.users)
+                if (valor.Email == email)
+                {
+                    this.users.Remove(valor);
+                    return valor;
+                }
+
+            return null;
         }
     }
 }
