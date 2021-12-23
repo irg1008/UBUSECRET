@@ -52,6 +52,30 @@ namespace DataAPI.Tests
         [TestMethod()]
         public void ListActiveUsersTest()
         {
+            User[] users = new User[] {
+                new User("user0", "user@example0.com", "P@ssword2"),
+                new User("user1", "user@example1.com", "P@ssword2"),
+                new User("user2", "user@example2.com", "P@ssword2"),
+                new User("user3", "user@example3.com", "P@ssword2"),
+                new User("user4", "user@example4.com", "P@ssword2"),
+                new User("user5", "user@example5.com", "P@ssword2"),
+            };
+
+            foreach (User valor in users)
+                valor.Request();
+
+            users[0].Activate();
+            users[1].Activate();
+            users[2].Activate();
+            users[3].Activate();
+
+            users[0].Unactivate();
+            users[1].Unactivate();
+
+            foreach (User valor in users)
+                Assert.IsTrue(db.AddUser(valor), 
+                    ">> No se ha podido añadir el usuario.");
+
             List<User> lau = db.ListActiveUsers();
 
             foreach (User valor in lau)
@@ -73,6 +97,30 @@ namespace DataAPI.Tests
         [TestMethod()]
         public void ListUnactiveUsersTest()
         {
+            User[] users = new User[] {
+                new User("user0", "user@example0.com", "P@ssword2"),
+                new User("user1", "user@example1.com", "P@ssword2"),
+                new User("user2", "user@example2.com", "P@ssword2"),
+                new User("user3", "user@example3.com", "P@ssword2"),
+                new User("user4", "user@example4.com", "P@ssword2"),
+                new User("user5", "user@example5.com", "P@ssword2"),
+            };
+
+            foreach (User valor in users)
+                valor.Request();
+
+            users[0].Activate();
+            users[1].Activate();
+            users[2].Activate();
+            users[3].Activate();
+
+            users[0].Unactivate();
+            users[1].Unactivate();
+
+            foreach (User valor in users)
+                Assert.IsTrue(db.AddUser(valor),
+                    ">> No se ha podido añadir el usuario.");
+
             List<User> liu = db.ListUnactiveUsers();
 
             foreach (User valor in liu)
@@ -91,10 +139,33 @@ namespace DataAPI.Tests
                 ">> No coinciden las cantidades de usuarios inactivos.");
         }
 
-
         [TestMethod()]
         public void ListPendientUsersTest()
         {
+            User[] users = new User[] {
+                new User("user0", "user@example0.com", "P@ssword2"),
+                new User("user1", "user@example1.com", "P@ssword2"),
+                new User("user2", "user@example2.com", "P@ssword2"),
+                new User("user3", "user@example3.com", "P@ssword2"),
+                new User("user4", "user@example4.com", "P@ssword2"),
+                new User("user5", "user@example5.com", "P@ssword2"),
+            };
+
+            foreach (User valor in users)
+                valor.Request();
+
+            users[0].Activate();
+            users[1].Activate();
+            users[2].Activate();
+            users[3].Activate();
+
+            users[0].Unactivate();
+            users[1].Unactivate();
+
+            foreach (User valor in users)
+                Assert.IsTrue(db.AddUser(valor),
+                    ">> No se ha podido añadir el usuario.");
+
             List<User> lpu = db.ListPendientUsers();
 
             foreach (User valor in lpu)

@@ -33,7 +33,7 @@ namespace DataAPI
             this.users.Add(user)
             return true;
         }
-
+        
         public Secret GetSecret(int id)
         {
             throw new NotImplementedException();
@@ -74,7 +74,7 @@ namespace DataAPI
             List<Secret> retorno = new List<Secret>();
 
             foreach (Secret secret in this.secrets)
-                foreach (User consumer in )
+                foreach (User consumer in secret.Consumers)
                     if(consumer.Email == user.Email)
                         retorno.add(secret);
 
