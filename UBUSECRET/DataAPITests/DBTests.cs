@@ -96,7 +96,7 @@ namespace DataAPI.Tests
         [TestMethod()]
         public void listPendientUsersTest()
         {
-            List<User> lpu = db.listActiveUsers();
+            List<User> lpu = db.listPendientUsers();
 
             foreach (User valor in lpu)
             {
