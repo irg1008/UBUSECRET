@@ -15,7 +15,7 @@ namespace Main
         BANNED
     }
 
-    public class User : IComparable<User>
+    public class User : IComparable<User>, ISerializable<User>
     {
         private readonly IdGen idGen = new IdGen();
 
@@ -144,6 +144,16 @@ namespace Main
         public int CompareTo(User other)
         {
             return Email.CompareTo(other.Email);
+        }
+
+        public string To_JSON()
+        {
+            throw new NotImplementedException();
+        }
+
+        public User From_JSON(string JSONString)
+        {
+            throw new NotImplementedException();
         }
     }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Main
 {
-    public class Secret : IComparable<Secret>
+    public class Secret : IComparable<Secret>, ISerializable<Secret>
     {
         private readonly IdGen idGen = new IdGen();
 
@@ -88,6 +88,16 @@ namespace Main
         public int CompareTo(Secret other)
         {
             return Title.CompareTo(other.Title);
+        }
+
+        public string To_JSON()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Secret From_JSON(string JSONString)
+        {
+            throw new NotImplementedException();
         }
     }
 }
