@@ -11,7 +11,7 @@ namespace DataAPI
         bool AddUser(User user);
 
         // RF04
-        List<User> GetUser(String email);
+        User GetUser(String email);
 
         // RF05
         User RemoveUser(String email);

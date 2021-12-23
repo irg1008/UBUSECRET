@@ -36,6 +36,7 @@ namespace DataAPI
 
         public User GetUser(string email)
         {
+
             throw new NotImplementedException();
         }
 
