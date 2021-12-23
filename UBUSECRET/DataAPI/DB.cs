@@ -28,12 +28,7 @@ namespace DataAPI
 
         public bool AddUser(User user)
         {
-            if (user == null) return false;
-
-            foreach (User valor in this.users)
-                if (valor.Email == user.Email)
-                    return false;
-
+            if (user == null || this.GetUser(user.Email) != null) return false;
             this.users.Add(user);
             return true;
         }
@@ -46,11 +41,8 @@ namespace DataAPI
 
         public User GetUser(string email)
         {
-            foreach (User valor in this.users)
-                if (email == valor.Email)
-                    return valor;
-
-            return null;
+            if (this.users.Count == 0) return null;
+            return this.users.Find(user => user.Email == email);
         }
 
         public List<User> ListActiveUsers()
@@ -62,7 +54,6 @@ namespace DataAPI
         public List<Secret> ListOwnSecrets(User user)
         {
             if (this.secrets.Count == 0 || user == null) return new List<Secret>();
-
             return this.secrets.FindAll(secret => secret.Owner.Equals(user));
         }
 
@@ -75,7 +66,6 @@ namespace DataAPI
         public List<Secret> ListReceivedSecrets(User user)
         {
             if (this.secrets.Count == 0 || user == null) return new List<Secret>();
-
             return this.secrets.FindAll(secret => secret.Consumers.Contains(user));
         }
 
@@ -87,26 +77,20 @@ namespace DataAPI
 
         public Secret RemoveSecret(int id)
         {
-            foreach (Secret valor in this.secrets)
-                if (valor.Id == id)
-                {
-                    this.secrets.Remove(valor);
-                    return valor;
-                }
-
-            return null;
+            Secret secretToDelete = this.GetSecret(id);
+            if (secretToDelete == null) return null;
+            this.secrets.Remove(secretToDelete);
+            return secretToDelete;
         }
 
         public User RemoveUser(string email)
         {
-            User user = this.users.Find(user => user.Email == email);
+            User user = this.GetUser(email);
+            if (user == null) return null;
 
-            if (user == null)
-                return null;
-
+            // Eliminamos los secretos cuyo dueño sea el usuario eliminado.
             List<Secret> secrets = ListOwnSecrets(user);
-
-            foreach (Secret secret in secrets) { RemoveSecret(secret.Id); };
+            secrets.ForEach((secret) => RemoveSecret(secret.Id));
 
             this.users.Remove(user);
             return user;
