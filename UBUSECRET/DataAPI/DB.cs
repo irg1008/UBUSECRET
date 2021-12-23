@@ -30,7 +30,7 @@ namespace DataAPI
                 if (valor.Email == user.Email)
                     return false;
 
-            this.users.Add(user)
+            this.users.Add(user);
             return true;
         }
         
@@ -58,8 +58,8 @@ namespace DataAPI
             List<Secret> retorno = new List<Secret>();
 
             foreach (Secret valor in this.secrets)
-                if (valor.Owner.Email == user.Id)
-                    retorno.add(valor);
+                if (valor.Owner.Email == user.Email)
+                    retorno.Add(valor);
 
             return retorno;
         }
@@ -76,7 +76,7 @@ namespace DataAPI
             foreach (Secret secret in this.secrets)
                 foreach (User consumer in secret.Consumers)
                     if(consumer.Email == user.Email)
-                        retorno.add(secret);
+                        retorno.Add(secret);
 
             return retorno;
         }
@@ -91,7 +91,7 @@ namespace DataAPI
             foreach (Secret valor in this.secrets)
                 if (valor.Id == id)
                 {
-                    this.users.Remove(valor);
+                    this.secrets.Remove(valor);
                     return valor;
                 }
 
