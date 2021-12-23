@@ -40,7 +40,14 @@ namespace DataAPI
 
         public Secret GetSecret(int id)
         {
-            return this.secrets.Find(secret => secret.Id == id);
+            try
+            {
+                return this.secrets.Find(secret => secret.Id == id);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public User GetUser(string email)
