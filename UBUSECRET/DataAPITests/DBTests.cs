@@ -14,6 +14,7 @@ namespace DataAPI.Tests
         private User user;
         private Secret secret;
 
+
         [TestInitialize()]
         public void Startup()
         {
@@ -37,6 +38,8 @@ namespace DataAPI.Tests
                 ">> No se ha podido añadir el secreto.");
             Assert.AreEqual(secret.Id, db.GetSecret(secret.Id).Id,
                 ">> No se ha encontrado el secreto añadido.");
+            Assert.IsFalse(db.AddSecret(secret),
+                ">> No puede hacer dos ids iguales");
         }
 
         [TestMethod()]
@@ -50,121 +53,118 @@ namespace DataAPI.Tests
         }
 
         [TestMethod()]
-        public void ListActiveUsersTest()
+        [DataRow(3, 3, 0)]
+        [DataRow(0, 3, 3)]
+        [DataRow(3, 0, 3)]
+        [DataRow(0, 0, 6)]
+        [DataRow(6, 0, 0)]
+        [DataRow(0, 6, 0)]
+        [DataRow(2, 2, 2)]
+        public void ListActiveUsersTest(int nAct, int nInact, int nPend)
         {
-            User[] users = new User[] {
-                new User("user0", "user@example0.com", "P@ssword2"),
-                new User("user1", "user@example1.com", "P@ssword2"),
-                new User("user2", "user@example2.com", "P@ssword2"),
-                new User("user3", "user@example3.com", "P@ssword2"),
-                new User("user4", "user@example4.com", "P@ssword2"),
-                new User("user5", "user@example5.com", "P@ssword2"),
-            };
+            List<User> users = new List<User>();
+
+            for (int i = 0; i < nAct + nInact + nPend; i++)
+                users.Add(new User("user" + i, "user" + i + "@ubusecret.com", "P@ssword" + i));
 
             foreach (User valor in users)
                 valor.Request();
 
-            users[0].Activate();
-            users[1].Activate();
-            users[2].Activate();
-            users[3].Activate();
+            for (int i = 0; i < nAct + nInact; i++)
+            {
+                users[i].Authorize();
+                users[i].Activate();
+            }
 
-            users[0].Unactivate();
-            users[1].Unactivate();
+            for (int i = 0; i < nInact; i++)
+                users[i].Unactivate();
 
             foreach (User valor in users)
-                Assert.IsTrue(db.AddUser(valor), 
-                    ">> No se ha podido añadir el usuario.");
+                db.AddUser(valor);
 
-            List<User> lau = db.ListActiveUsers();
+            List<User> lpu = db.ListActiveUsers();
 
-            foreach (User valor in lau)
+            foreach (User valor in lpu)
             {
                 Assert.AreEqual(valor.State, State.ACTIVE,
                     ">> Intruso entre los usuarios activos.");
             }
 
-            int c = 0;
-            foreach (User valor in db.Users)
-            {
-                if (valor.State == State.ACTIVE) { c += 1; };
-            }
-
-            Assert.AreEqual(c, lau.Count,
+            Assert.AreEqual(nAct, lpu.Count,
                 ">> No coinciden las cantidades de usuarios activos.");
         }
 
         [TestMethod()]
-        public void ListUnactiveUsersTest()
+        [DataRow(3, 3, 0)]
+        [DataRow(0, 3, 3)]
+        [DataRow(3, 0, 3)]
+        [DataRow(0, 0, 6)]
+        [DataRow(6, 0, 0)]
+        [DataRow(0, 6, 0)]
+        [DataRow(2, 2, 2)]
+        public void ListUnactiveUsersTest(int nAct, int nInact, int nPend)
         {
-            User[] users = new User[] {
-                new User("user0", "user@example0.com", "P@ssword2"),
-                new User("user1", "user@example1.com", "P@ssword2"),
-                new User("user2", "user@example2.com", "P@ssword2"),
-                new User("user3", "user@example3.com", "P@ssword2"),
-                new User("user4", "user@example4.com", "P@ssword2"),
-                new User("user5", "user@example5.com", "P@ssword2"),
-            };
+            List<User> users = new List<User>();
+
+            for (int i = 0; i < nAct + nInact + nPend; i++)
+                users.Add(new User("user" + i, "user" + i + "@ubusecret.com", "P@ssword" + i));
 
             foreach (User valor in users)
                 valor.Request();
 
-            users[0].Activate();
-            users[1].Activate();
-            users[2].Activate();
-            users[3].Activate();
+            for (int i = 0; i < nAct + nInact; i++)
+            {
+                users[i].Authorize();
+                users[i].Activate();
+            }
 
-            users[0].Unactivate();
-            users[1].Unactivate();
+            for (int i = 0; i < nInact; i++)
+                users[i].Unactivate();
 
             foreach (User valor in users)
-                Assert.IsTrue(db.AddUser(valor),
-                    ">> No se ha podido añadir el usuario.");
+                db.AddUser(valor);
 
-            List<User> liu = db.ListUnactiveUsers();
+            List<User> lpu = db.ListUnactiveUsers();
 
-            foreach (User valor in liu)
+            foreach (User valor in lpu)
             {
                 Assert.AreEqual(valor.State, State.INACTIVE,
                     ">> Intruso entre los usuarios inactivos.");
             }
 
-            int c = 0;
-            foreach (User valor in db.Users)
-            {
-                if (valor.State == State.INACTIVE) { c += 1; };
-            }
-
-            Assert.AreEqual(c, liu.Count,
+            Assert.AreEqual(nInact, lpu.Count,
                 ">> No coinciden las cantidades de usuarios inactivos.");
         }
 
         [TestMethod()]
-        public void ListPendientUsersTest()
+        [DataRow(3, 3, 0)]
+        [DataRow(0, 3, 3)]
+        [DataRow(3, 0, 3)]
+        [DataRow(0, 0, 6)]
+        [DataRow(6, 0, 0)]
+        [DataRow(0, 6, 0)]
+        [DataRow(2, 2, 2)]
+        public void ListPendientUsersTest(int nAct, int nInact, int nPend)
         {
-            User[] users = new User[] {
-                new User("user0", "user@example0.com", "P@ssword2"),
-                new User("user1", "user@example1.com", "P@ssword2"),
-                new User("user2", "user@example2.com", "P@ssword2"),
-                new User("user3", "user@example3.com", "P@ssword2"),
-                new User("user4", "user@example4.com", "P@ssword2"),
-                new User("user5", "user@example5.com", "P@ssword2"),
-            };
+            List<User> users = new List<User>();
+
+            for (int i = 0; i < nAct + nInact + nPend; i++)
+                users.Add(new User("user" + i, "user" + i + "@ubusecret.com", "P@ssword" + i));
 
             foreach (User valor in users)
                 valor.Request();
 
-            users[0].Activate();
-            users[1].Activate();
-            users[2].Activate();
-            users[3].Activate();
+            for (int i = 0; i < nAct + nInact; i++)
+            {
+                users[i].Authorize();
+                users[i].Activate();
+            }
 
-            users[0].Unactivate();
-            users[1].Unactivate();
+            for (int i = 0; i < nInact; i++)
+                users[i].Unactivate();
 
             foreach (User valor in users)
-                Assert.IsTrue(db.AddUser(valor),
-                    ">> No se ha podido añadir el usuario.");
+                db.AddUser(valor);
 
             List<User> lpu = db.ListPendientUsers();
 
@@ -174,13 +174,7 @@ namespace DataAPI.Tests
                     ">> Intruso entre los usuarios pendientes de validar.");
             }
 
-            int c = 0;
-            foreach (User valor in db.Users)
-            {
-                if (valor.State == State.REQUESTED) { c += 1; };
-            }
-
-            Assert.AreEqual(c, lpu.Count,
+            Assert.AreEqual(nPend, lpu.Count,
                 ">> No coinciden las cantidades de usuarios pendientes de validar.");
         }
 
@@ -216,7 +210,7 @@ namespace DataAPI.Tests
 
             // Comprobamos que es igual a la insertada.
             Assert.AreEqual(ownedSecrets.Count, ownedSecretsFromDB.Count, "Inserted owner secrets and recieved are not equal");
-            
+
             // Recuperamos secretos de un usuario nulo.
             List<Secret> nullOwnerSecrets = db.ListOwnSecrets(null);
             Assert.AreEqual(nullOwnerSecrets.Count, 0, "Cannot pass a null user to fetch his secrets");
@@ -250,7 +244,7 @@ namespace DataAPI.Tests
 
             // Recibimos la lista de nuevo.
             recievedSecretsFromDB = db.ListReceivedSecrets(guest);
-            
+
             // Comprobamos que es igual a la insertada.
             Assert.AreEqual(recievedSecrets.Count, recievedSecretsFromDB.Count, "Inserted guest secrets and recieved are not equal");
 
@@ -298,6 +292,20 @@ namespace DataAPI.Tests
             Assert.IsNull(emptyIdSecret, "Attempt to remove a user with id 0 should return null");
             Secret minusIdSecret = db.RemoveSecret(-1);
             Assert.IsNull(minusIdSecret, "Attempt to remove a secret with id less than 0 should return null");
+        }
+
+        // Comprobamos que solo haya problemas si coinciden los correos
+        [DataRow("user", "user@example.com", "P@ssword1", "user2", "user2@example.com", "P@ssword2", true)]
+        [DataRow("user2", "user@example.com", "P@ssword1", "user2", "user2@example.com", "P@ssword2", true)]
+        [DataRow("user", "user@example.com", "P@ssword2", "user2", "user2@example.com", "P@ssword2", true)]
+        [DataRow("user", "user@example.com", "P@ssword1", "user2", "user@example.com", "P@ssword2", false)]
+        public void AddUserTest2(String name1, String email1, String pass1,
+            String name2, String email2, String pass2, bool expected)
+        {
+            User user1 = new User(name1, email1, pass1);
+            User user2 = new User(name2, email2, pass2);
+
+            Assert.AreEqual(db.AddUser(user1) && db.AddUser(user2), expected);
         }
 
         [TestMethod()]

@@ -207,3 +207,6 @@ C:\Users\usuario\OneDrive\.workspace\visual-workspace\UBUSECRET\UBUSECRET\DataAP
 C:\Users\usuario\OneDrive\.workspace\visual-workspace\UBUSECRET\UBUSECRET\DataAPITests\obj\Release\netcoreapp3.1\DataAPITests.dll
 C:\Users\usuario\OneDrive\.workspace\visual-workspace\UBUSECRET\UBUSECRET\DataAPITests\obj\Release\netcoreapp3.1\DataAPITests.pdb
 C:\Users\usuario\OneDrive\.workspace\visual-workspace\UBUSECRET\UBUSECRET\DataAPITests\obj\Release\netcoreapp3.1\DataAPITests.genruntimeconfig.cache
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica02\Proyecto\UBUSECRET\DataAPITests\bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica02\Proyecto\UBUSECRET\DataAPITests\bin\Release\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\Ivan\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica02\Proyecto\UBUSECRET\DataAPITests\bin\Release\netcoreapp3.1\System.Text.Json.dll
