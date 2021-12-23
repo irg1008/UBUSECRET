@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+PzUkFJJko9Tyo0BCg4JIYzwUBWqH9ujwHBDM81nz+MUlZdo0rXL9UiDGm6aFwhqci96qNn3/P2BR9uv1QgC9Q==",
+  "dgSpecHash": "VcNEuMdb+tiSW96YgFDYSaK3G76c9CnSbnh68vfmnl1nUQA2HBioJC6/O6UjfD4L8k9kIrRXazAap236oeoZbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Data\\Data.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Data\\Data.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
-    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Ivan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -237,23 +237,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ivan\\.nuget\\packages\\": {},
+    "C:\\Users\\usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Main\\Main.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj",
       "projectName": "Main",
-      "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Main\\Main.csproj",
-      "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Main\\obj\\",
+      "projectPath": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Main\\Main.csproj",
+      "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Main\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -262,15 +262,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://packagesource": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Utils\\Utils.csproj": {
-              "projectPath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\Utils\\Utils.csproj"
+            "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj": {
+              "projectPath": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\Utils\\Utils.csproj"
             }
           }
         }

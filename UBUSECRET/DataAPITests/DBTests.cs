@@ -215,11 +215,11 @@ namespace DataAPI.Tests
             ownedSecretsFromDB = db.ListOwnSecrets(owner);
 
             // Comprobamos que es igual a la insertada.
-            Assert.AreEqual(ownedSecrets, ownedSecretsFromDB, "Inserted owner secrets and recieved are not equal");
-
+            Assert.AreEqual(ownedSecrets.Count, ownedSecretsFromDB.Count, "Inserted owner secrets and recieved are not equal");
+            
             // Recuperamos secretos de un usuario nulo.
             List<Secret> nullOwnerSecrets = db.ListOwnSecrets(null);
-            Assert.IsNull(nullOwnerSecrets, "Cannot pass a null user to fetch his secrets");
+            Assert.AreEqual(nullOwnerSecrets.Count, 0, "Cannot pass a null user to fetch his secrets");
         }
 
         [TestMethod()]
@@ -249,14 +249,14 @@ namespace DataAPI.Tests
             }
 
             // Recibimos la lista de nuevo.
-            recievedSecretsFromDB = db.ListOwnSecrets(guest);
-
+            recievedSecretsFromDB = db.ListReceivedSecrets(guest);
+            
             // Comprobamos que es igual a la insertada.
-            Assert.AreEqual(recievedSecrets, recievedSecretsFromDB, "Inserted guest secrets and recieved are not equal");
+            Assert.AreEqual(recievedSecrets.Count, recievedSecretsFromDB.Count, "Inserted guest secrets and recieved are not equal");
 
             // Recuperamos secretos de un usuario nulo.
             List<Secret> nullOwnerSecrets = db.ListReceivedSecrets(null);
-            Assert.IsNull(nullOwnerSecrets, "Cannot pass a null user to fetch recieved secrets");
+            Assert.AreEqual(nullOwnerSecrets.Count, 0, "Cannot pass a null user to fetch recieved secrets");
         }
 
         [TestMethod()]

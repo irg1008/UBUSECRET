@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "k07/kWVqB1wu51LUIvhEFrzkcMH7KFJD7u8N0ABIHB1jtMMyEYCknQ9ieopf8X+QoUyMtmDGtv1RDqnXoUBR5g==",
+  "dgSpecHash": "I6uzJ+NJvn7st5F8inVulqa3LvIRRs4qtNs7ZqaywiRAkFqric55pPJ9azyEUDPXY7KU2wWNOgbCEz7rO61XDg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\DataAPI\\DataAPI.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\OneDrive\\.workspace\\visual-workspace\\UBUSECRET\\UBUSECRET\\DataAPI\\DataAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512"
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512"
   ],
   "logs": []
 }

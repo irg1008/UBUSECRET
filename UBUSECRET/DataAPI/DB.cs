@@ -66,13 +66,9 @@ namespace DataAPI
 
         public List<Secret> ListOwnSecrets(User user)
         {
-            List<Secret> retorno = new List<Secret>();
+            if (this.secrets.Count == 0 || user == null) return new List<Secret>();
 
-            foreach (Secret valor in this.secrets)
-                if (valor.Owner.Email == user.Email)
-                    retorno.Add(valor);
-
-            return retorno;
+            return this.secrets.FindAll(secret => secret.Owner.Equals(user));
         }
 
         public List<User> ListPendientUsers()
@@ -82,14 +78,9 @@ namespace DataAPI
 
         public List<Secret> ListReceivedSecrets(User user)
         {
-            List<Secret> retorno = new List<Secret>();
+            if (this.secrets.Count == 0 || user == null) return new List<Secret>();
 
-            foreach (Secret secret in this.secrets)
-                foreach (User consumer in secret.Consumers)
-                    if (consumer.Email == user.Email)
-                        retorno.Add(secret);
-
-            return retorno;
+            return this.secrets.FindAll(secret => secret.Consumers.Contains(user));
         }
 
         public List<User> ListUnactiveUsers()
@@ -111,14 +102,17 @@ namespace DataAPI
 
         public User RemoveUser(string email)
         {
-            foreach (User valor in this.users)
-                if (valor.Email == email)
-                {
-                    this.users.Remove(valor);
-                    return valor;
-                }
+            User user = this.users.Find(user => user.Email == email);
 
-            return null;
+            if (user == null)
+                return null;
+
+            List<Secret> secrets = ListOwnSecrets(user);
+
+            foreach (Secret secret in secrets) { RemoveSecret(secret.Id); };
+
+            this.users.Remove(user);
+            return user;
         }
     }
 }
