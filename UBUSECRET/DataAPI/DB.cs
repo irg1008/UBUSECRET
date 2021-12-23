@@ -40,14 +40,8 @@ namespace DataAPI
 
         public Secret GetSecret(int id)
         {
-            try
-            {
-                return this.secrets.Find(secret => secret.Id == id);
-            }
-            catch
-            {
-                return null;
-            }
+            if (this.secrets.Count == 0) return null;
+            return this.secrets.Find(secret => secret.Id == id);
         }
 
         public User GetUser(string email)
@@ -61,6 +55,7 @@ namespace DataAPI
 
         public List<User> ListActiveUsers()
         {
+            if (this.users.Count == 0) return null;
             return this.users.FindAll(user => user.State == State.ACTIVE);
         }
 
@@ -73,6 +68,7 @@ namespace DataAPI
 
         public List<User> ListPendientUsers()
         {
+            if (this.users.Count == 0) return null;
             return this.users.FindAll(user => user.State == State.REQUESTED);
         }
 
@@ -85,6 +81,7 @@ namespace DataAPI
 
         public List<User> ListUnactiveUsers()
         {
+            if (this.users.Count == 0) return null;
             return this.users.FindAll(user => user.State == State.INACTIVE);
         }
 
