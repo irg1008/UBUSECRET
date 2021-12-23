@@ -1,6 +1,7 @@
 ﻿using Utils;
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Main
 {
@@ -92,12 +93,12 @@ namespace Main
 
         public string To_JSON()
         {
-            throw new NotImplementedException();
+            return JsonSerializer.Serialize(this);
         }
 
         public Secret From_JSON(string JSONString)
         {
-            throw new NotImplementedException();
+            return JsonSerializer.Deserialize<Secret>(JSONString);
         }
     }
 }
