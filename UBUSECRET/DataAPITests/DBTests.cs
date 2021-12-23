@@ -24,7 +24,7 @@ namespace DataAPI.Tests
         }
 
         [TestCleanup]
-        public void CleanUp()
+        public void CleanUp() 
         {
             user = null;
             secret = null;
@@ -34,15 +34,20 @@ namespace DataAPI.Tests
         [TestMethod()]
         public void addSecretTest()
         {
-            Assert.Fail(); //TODO
+            Assert.IsTrue(db.addSecret(secret), 
+                ">> No se ha podido añadir el secreto.");
+            Assert.AreEqual(secret.Id, db.getSecret(secret.Id),
+                ">> No se ha encontrado el secreto añadido.");
         }
 
         [TestMethod()]
         public void getSecretTest()
         {
-            Assert.AreEqual(null, db.getSecret(secret.Id));
+            Assert.AreEqual(null, db.getSecret(secret.Id),
+                ">> El secreto no debería de poder encontrarse.");
             db.addSecret(secret);
-            Assert.AreEqual(secret.Id, db.getSecret(secret.Id));
+            Assert.AreEqual(secret.Id, db.getSecret(secret.Id),
+                ">> No se ha podido encontrar el secreto.");
         }
 
         [TestMethod()]
@@ -52,7 +57,8 @@ namespace DataAPI.Tests
             
             foreach(User valor in lau)
             {
-                Assert.AreEqual(valor.State, State.ACTIVE);
+                Assert.AreEqual(valor.State, State.ACTIVE, 
+                    ">> Intruso entre los usuarios activos.");
             }
 
             int c = 0;
@@ -61,7 +67,8 @@ namespace DataAPI.Tests
                 if(valor.State == State.ACTIVE) { c += 1; };
             }
 
-            Assert.AreEqual(c, lau.Count);
+            Assert.AreEqual(c, lau.Count, 
+                ">> No coinciden las cantidades de usuarios activos.");
         }
 
         [TestMethod()]
@@ -71,7 +78,8 @@ namespace DataAPI.Tests
 
             foreach (User valor in liu)
             {
-                Assert.AreEqual(valor.State, State.INACTIVE);
+                Assert.AreEqual(valor.State, State.INACTIVE,
+                    ">> Intruso entre los usuarios inactivos.");
             }
 
             int c = 0;
@@ -80,7 +88,8 @@ namespace DataAPI.Tests
                 if (valor.State == State.INACTIVE) { c += 1; };
             }
 
-            Assert.AreEqual(c, liu.Count);
+            Assert.AreEqual(c, liu.Count,
+                ">> No coinciden las cantidades de usuarios inactivos.");
         }
 
 
@@ -91,7 +100,8 @@ namespace DataAPI.Tests
 
             foreach (User valor in lpu)
             {
-                Assert.AreEqual(valor.State, State.REQUESTED);
+                Assert.AreEqual(valor.State, State.REQUESTED,
+                    ">> Intruso entre los usuarios pendientes de validar.");
             }
 
             int c = 0;
@@ -100,7 +110,8 @@ namespace DataAPI.Tests
                 if (valor.State == State.REQUESTED) { c += 1; };
             }
 
-            Assert.AreEqual(c, lpu.Count);
+            Assert.AreEqual(c, lpu.Count,
+                ">> No coinciden las cantidades de usuarios pendientes de validar.");
         }
 
         [TestMethod()]

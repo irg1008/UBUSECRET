@@ -7,6 +7,18 @@ namespace DataAPI
 {
     public class DB : IDB
     {
+        List<Secret> secrets;
+        List<User> users;
+
+        public DB()
+        {
+            this.secrets = new List<Secret>();
+            this.users = new List<User>();
+        }
+
+        public List<Secret> Secrets { get => secrets; set => secrets = value; }
+        public List<User> Users { get => users; set => users = value; }
+
         public bool addSecret(Secret secret)
         {
             throw new NotImplementedException();
@@ -37,7 +49,7 @@ namespace DataAPI
             throw new NotImplementedException();
         }
 
-        public List<User> listUnactiveUsers()
+        public List<User> listInactiveUsers()
         {
             throw new NotImplementedException();
         }

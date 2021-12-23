@@ -1,0 +1,15 @@
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\DataAPI.deps.json
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\DataAPI.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\DataAPI.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\Main.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\Utils.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\Main.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\bin\Release\netstandard2.1\Utils.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.AssemblyInfoInputs.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.AssemblyInfo.cs
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.csproj.CopyComplete
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\DataAPI\obj\Release\netstandard2.1\DataAPI.pdb

@@ -50,3 +50,16 @@ C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practic
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica01\Git\UBUSECRET\Main\obj\Release\netstandard2.0\Main.csproj.CopyComplete
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica01\Git\UBUSECRET\Main\obj\Release\netstandard2.0\Main.dll
 C:\Users\Iván\Dropbox\Uni_4_1()\Asignaturas\ValidacionYPruebas\Practica\Practica01\Git\UBUSECRET\Main\obj\Release\netstandard2.0\Main.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\bin\Release\netstandard2.0\Main.deps.json
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\bin\Release\netstandard2.0\Main.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\bin\Release\netstandard2.0\Main.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\bin\Release\netstandard2.0\Utils.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\bin\Release\netstandard2.0\Utils.pdb
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.AssemblyInfoInputs.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.AssemblyInfo.cs
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.csproj.CopyComplete
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.dll
+C:\Users\usuario\OneDrive\.workspace\github-workspace\UBUSECRET\UBUSECRET\Main\obj\Release\netstandard2.0\Main.pdb
