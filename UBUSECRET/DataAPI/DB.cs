@@ -21,11 +21,15 @@ namespace DataAPI
 
         public bool AddSecret(Secret secret)
         {
-            throw new NotImplementedException();
+            if (secret == null || this.GetSecret(secret.Id) != null) return false;
+            this.secrets.Add(secret);
+            return true;
         }
 
         public bool AddUser(User user)
         {
+            if (user == null) return false;
+
             foreach (User valor in this.users)
                 if (valor.Email == user.Email)
                     return false;
@@ -33,10 +37,10 @@ namespace DataAPI
             this.users.Add(user);
             return true;
         }
-        
+
         public Secret GetSecret(int id)
         {
-            throw new NotImplementedException();
+            return this.secrets.Find(secret => secret.Id == id);
         }
 
         public User GetUser(string email)
@@ -50,7 +54,7 @@ namespace DataAPI
 
         public List<User> ListActiveUsers()
         {
-            throw new NotImplementedException();
+            return this.users.FindAll(user => user.State == State.ACTIVE);
         }
 
         public List<Secret> ListOwnSecrets(User user)
@@ -66,7 +70,7 @@ namespace DataAPI
 
         public List<User> ListPendientUsers()
         {
-            throw new NotImplementedException();
+            return this.users.FindAll(user => user.State == State.REQUESTED);
         }
 
         public List<Secret> ListReceivedSecrets(User user)
@@ -75,7 +79,7 @@ namespace DataAPI
 
             foreach (Secret secret in this.secrets)
                 foreach (User consumer in secret.Consumers)
-                    if(consumer.Email == user.Email)
+                    if (consumer.Email == user.Email)
                         retorno.Add(secret);
 
             return retorno;
@@ -83,7 +87,7 @@ namespace DataAPI
 
         public List<User> ListUnactiveUsers()
         {
-            throw new NotImplementedException();
+            return this.users.FindAll(user => user.State == State.INACTIVE);
         }
 
         public Secret RemoveSecret(int id)

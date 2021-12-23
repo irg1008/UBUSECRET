@@ -35,7 +35,7 @@ namespace DataAPI.Tests
         {
             Assert.IsTrue(db.AddSecret(secret),
                 ">> No se ha podido añadir el secreto.");
-            Assert.AreEqual(secret.Id, db.GetSecret(secret.Id),
+            Assert.AreEqual(secret.Id, db.GetSecret(secret.Id).Id,
                 ">> No se ha encontrado el secreto añadido.");
         }
 
@@ -45,7 +45,7 @@ namespace DataAPI.Tests
             Assert.AreEqual(null, db.GetSecret(secret.Id),
                 ">> El secreto no debería de poder encontrarse.");
             db.AddSecret(secret);
-            Assert.AreEqual(secret.Id, db.GetSecret(secret.Id),
+            Assert.AreEqual(secret.Id, db.GetSecret(secret.Id).Id,
                 ">> No se ha podido encontrar el secreto.");
         }
 
