@@ -26,6 +26,7 @@ namespace Main
         }
 
         /* GETTERS AND SETTERS */
+        [JsonProperty]
         public int Id => id;
         [JsonProperty]
         public string Title { get => title; set => title = value; }
