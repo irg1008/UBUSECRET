@@ -47,6 +47,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -120,7 +129,7 @@
           "lib/netstandard2.0/System.Text.Json.dll": {}
         },
         "build": {
-          "build/System.Text.Json.targets": {}
+          "build/_._": {}
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {
@@ -343,6 +352,33 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -599,7 +635,7 @@
     ".NETStandard,Version=v2.0": [
       "Microsoft.Bcl.HashCode >= 1.1.1",
       "NETStandard.Library >= 2.0.3",
-      "System.Text.Json >= 6.0.1",
+      "Newtonsoft.Json >= 13.0.1",
       "Utils >= 1.0.0"
     ]
   },
@@ -662,9 +698,9 @@
             "version": "[2.0.3, )",
             "autoReferenced": true
           },
-          "System.Text.Json": {
+          "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[6.0.1, )"
+            "version": "[13.0.1, )"
           }
         },
         "imports": [

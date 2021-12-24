@@ -1,11 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Main;
+using Newtonsoft.Json;
 
 namespace Main.Tests
 {
     [TestClass()]
     public class SecretSerializableTests
     {
-
         readonly User owner = new User("Owner", "owner@user.com", "P@ssword");
         Secret s;
 
@@ -22,21 +26,19 @@ namespace Main.Tests
         }
 
         [TestMethod()]
-        public void To_JSONTest()
+        public void Secret_JSONTest()
         {
             // Conseguimos el JSON
             string sJSON = s.To_JSON();
 
             // Deserialziamos el JSON recibido.
-            Secret desSecret = s.From_JSON();
-            
-            Assert.AreEqual(expectedJSON, sJSON);
-        }
+            Secret desSecret = s.From_JSON(sJSON);
 
-        [TestMethod()]
-        public void From_JSONTest()
-        {
-            Assert.Fail();
+            // Volvemos a conseguir el JSON del deserializado.
+            string desJSON = desSecret.To_JSON();
+
+            // El secreto original y el extraido del JSON deben ser iguales.
+            Assert.IsTrue(sJSON == desJSON);
         }
     }
 }

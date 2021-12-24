@@ -1,14 +1,14 @@
 ﻿using Utils;
 using System;
 using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace Main
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class Secret : IComparable<Secret>, ISerializable<Secret>
     {
         private readonly IdGen idGen = new IdGen();
-
         private readonly int id;
         private string title;
         private readonly string message;
@@ -27,9 +27,13 @@ namespace Main
 
         /* GETTERS AND SETTERS */
         public int Id => id;
+        [JsonProperty]
         public string Title { get => title; set => title = value; }
+        [JsonProperty]
         public User Owner { get => owner; set => owner = value; }
+        [JsonProperty]
         public List<User> Consumers { get => consumers; set => consumers = value; }
+        [JsonProperty]
         public string Message { get => message; }
 
         public bool IsOwner(User user)
@@ -78,7 +82,7 @@ namespace Main
         public override bool Equals(object obj)
         {
             return obj is Secret secret &&
-                   Id.Equals(secret.Id);
+                   id.Equals(secret.Id);
         }
 
         public override int GetHashCode()
@@ -93,12 +97,12 @@ namespace Main
 
         public string To_JSON()
         {
-            return JsonSerializer.Serialize(this);
+            return JsonConvert.SerializeObject(this);
         }
 
         public Secret From_JSON(string JSONString)
         {
-            return JsonSerializer.Deserialize<Secret>(JSONString);
+            return JsonConvert.DeserializeObject<Secret>(JSONString);
         }
     }
 }

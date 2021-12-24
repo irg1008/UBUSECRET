@@ -5,7 +5,7 @@ using Utils;
 
 namespace Invitation
 {
-    public class InvitationLink : ISerializable<InvitationLink>
+    public class InvitationLink
     {
 
         private readonly Guid id;
@@ -38,16 +38,6 @@ namespace Invitation
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
-        }
-
-        public string To_JSON()
-        {
-            throw new NotImplementedException();
-        }
-
-        public InvitationLink From_JSON(string JSONString)
-        {
-            throw new NotImplementedException();
         }
     }
 }

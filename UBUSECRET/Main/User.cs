@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using Utils;
-
+using Newtonsoft.Json;
 
 namespace Main
 {
@@ -15,21 +15,24 @@ namespace Main
         BANNED
     }
 
+    [JsonObject(MemberSerialization.OptIn)]
     public class User : IComparable<User>, ISerializable<User>
     {
         private readonly IdGen idGen = new IdGen();
 
         private readonly int id;
-        private String name;
-        private String email;
-        private String password;
-        private String lastIP;
+        private string name;
+        private string email;
+        private string password;
+        private string lastIP;
         private State state;
         private DateTime lastSeen;
         private bool isAdmin;
 
         /* CONSTRUCTOR */
-        public User(String name, String email, String initPassword)
+        public User() { }
+
+        public User(string name, string email, string initPassword)
         {
             this.id = idGen.NewId();
             Name = name;
@@ -43,12 +46,18 @@ namespace Main
 
         /* GETTERS AND SETTERS */
         public int Id => id;
+        [JsonProperty]
         public string Name { get => name; set => name = value; }
+        [JsonProperty]
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
+        [JsonProperty]
         public string LastIP { get => lastIP; set => lastIP = value; }
+        [JsonProperty]
         public DateTime LastSeen { get => lastSeen; set => lastSeen = value; }
+        [JsonProperty]
         public bool IsAdmin { get => isAdmin; set => isAdmin = value; }
+        [JsonProperty]
         public State State { get => state; set => state = value; }
 
 
@@ -123,7 +132,7 @@ namespace Main
 
         private string Hash(string password)
         {
-            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes((String) password);
             SHA256 mySHA256 = SHA256.Create();
             bytes = mySHA256.ComputeHash(bytes);
             return (System.Text.Encoding.ASCII.GetString(bytes));
@@ -148,12 +157,12 @@ namespace Main
 
         public string To_JSON()
         {
-            throw new NotImplementedException();
+            return JsonConvert.SerializeObject(this);
         }
 
         public User From_JSON(string JSONString)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<User>(JSONString);
         }
     }
 

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ZFdUHaUDqq4qV6Vad2945EIM/qqUQhi5mv+hn9urnwuLRTezoK6/cd7VMFb9ppCubNXJHLZPK/RDC/hW6kE/bA==",
+  "dgSpecHash": "XV6Zec+oYgF+hZNbd9hq9HV6XVAE/J/uRTsg1z8Q+EvLhCwTgpISBpTElAzv9dNZc0lLL12R5F/0BsTG0uXoAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ivan\\Dropbox\\Uni_4_1()\\Asignaturas\\ValidacionYPruebas\\Practica\\Practica02\\Proyecto\\UBUSECRET\\DataAPI\\DataAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
